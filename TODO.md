@@ -30,6 +30,11 @@ Most items came from manuzio's TODO (P1, narration) when kempelen was split out 
 
 ## Pronunciation: jespersen ([docs/jespersen.md](docs/jespersen.md))
 
+- [ ] Take jespersen's Italian fixes of 27 October 2026 (its commit `f36efe6`: long ʎ between vowels,
+      a voiceless s in stasera, girasole, ventisei…) once the owner tags them (v0.1.1): bump `tag`,
+      then update the changed phoneme references ([docs/parity.md](docs/parity.md)); meglio reaches
+      Kokoro as `mˈɛlʲːo`, the owner's choice, instead of today's short `mˈɛlʲo`
+
 - [ ] Ask jespersen whether single letters should be letter names: they are read as sounds in Italian
       (`x y z` → `ks ˈi dz`), where eSpeak NG says the names
 - [ ] Mandarin through jespersen: score its misaki notation against `mandarin-misaki.json`; switch only if
@@ -75,3 +80,6 @@ with the `audio_check` example.
 - [ ] Mandarin: `zf_xiaobei` and `zm_yunjian` samples, against narration made before the new reader
 - [ ] The shipped reading rules' abbreviations, English spoken forms included ("St." is always
       "Saint", "Dr." always "Doctor"), and `ordinalDot` for Basque and Lithuanian (both off)
+- [ ] Italian ʎ as `lʲ` (docs/jespersen.md, "Fitting to Kokoro"): chosen on "meglio"; listen to a short
+      one too ("gli" at a sentence's start, "sbagliato" once long), and whether Catalan and Portuguese ʎ
+      (lh) sound wrong the same way

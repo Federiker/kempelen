@@ -99,3 +99,25 @@ fn every_letter_jespersen_writes_reaches_kokoro() {
     }
     assert!(dropped.is_empty(), "Kokoro would drop {dropped:?}");
 }
+
+#[test]
+fn italian_palatal_l_is_read_as_kokoro_says_it_well() {
+    // Long between vowels, as jespersen writes it there, short elsewhere; other languages keep ʎ.
+    assert_eq!(super::kokoro_sounds("mˈɛʎʎo", "it"), "mˈɛlʲːo");
+    assert_eq!(super::kokoro_sounds("ʎˈi", "it"), "lʲˈi");
+    assert_eq!(super::kokoro_sounds("fˈiʎʎo e ʎɪ", "it"), "fˈilʲːo e lʲɪ");
+    assert_eq!(super::kokoro_sounds("ˈmuʎeɾ", "es"), "ˈmuʎeɾ");
+    assert_eq!(super::kokoro_sounds("ʎˈi", "pt"), "ʎˈi");
+}
+
+#[test]
+fn italian_text_reaches_kokoro_without_its_palatal_l() {
+    let phonemes =
+        crate::phonemes::get_phonemes("Gli gnocchi sono meglio.", crate::Voice::IfSara).unwrap();
+    assert!(
+        !phonemes.contains('ʎ') && phonemes.contains("lʲ"),
+        "{phonemes}"
+    );
+    let unknown = crustytts_tokenizer::KokoroTokenizer::new().unknown_chars(&phonemes);
+    assert!(unknown.is_empty(), "{unknown:?} in {phonemes}");
+}

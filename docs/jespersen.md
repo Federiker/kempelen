@@ -49,6 +49,11 @@ Kokoro learnt a few languages in eSpeak NG's notation, which jespersen writes. `
 Kokoro silently drops the letter and its sound. `every_letter_jespersen_writes_reaches_kokoro` fails if
 any letter in the corpus (and a line in each language the corpus lacks) would still be dropped.
 
+A sound Kokoro has but says badly in one language is respelt for that language only (`kokoro_sounds`):
+Italian ʎ (gli, meglio) becomes a palatalised l, `lʲ`, and `lʲː` where jespersen writes it long
+(`ʎʎ`, between vowels), as the owner chose by ear on 27 October 2026 against ʎ, ʎʎ, ʎː and lj. Other
+languages keep ʎ until someone listens to them.
+
 eSpeak NG's own notation writes Danish short e as the Greek ε (`fem` → `fˈεm`), and jespersen copies it
 on purpose; owner, 24 October 2026: jespersen stays faithful and the caller maps it. To ask jespersen:
 single letters read as sounds rather than letter names in Italian (`x y z` → `ks ˈi dz`).

@@ -79,7 +79,11 @@ pub fn phonemize_with_rules(
                 } else {
                     // An abbreviation is read better with its own full stop than without ("etc.").
                     let words = words.trim().replace(KEPT_DOT, ".");
-                    fit_to_kokoro(engine.text_to_phonemes(&words)?.trim(), &tokenizer)
+                    fit_to_kokoro(
+                        engine.text_to_phonemes(&words)?.trim(),
+                        engine.language(),
+                        &tokenizer,
+                    )
                 };
                 if spoken.is_empty() {
                     pending_space |= trailing;
@@ -99,18 +103,39 @@ pub fn phonemize_with_rules(
 ///
 /// Kokoro learnt a few languages in eSpeak NG's notation; others use some sounds outside its
 /// inventory. Anything still unknown (diacritics) is dropped, as the tokenizer would, and clause
-/// breaks become spaces.
+/// breaks become spaces. `code` is the reading code: a few sounds Kokoro says badly in one language
+/// are respelt for it (see [`kokoro_sounds`]).
 #[expect(
     clippy::trivially_copy_pass_by_ref,
     reason = "the tokenizer is borrowed, as crustytts lends it"
 )]
-fn fit_to_kokoro(phonemes: &str, tokenizer: &KokoroTokenizer) -> String {
-    let mapped: String = phonemes.chars().map(kokoro_symbol).collect();
+fn fit_to_kokoro(phonemes: &str, code: &str, tokenizer: &KokoroTokenizer) -> String {
+    let mapped: String = kokoro_sounds(phonemes, code)
+        .chars()
+        .map(kokoro_symbol)
+        .collect();
     let unknown = tokenizer.unknown_chars(&mapped);
     mapped
         .chars()
         .filter(|symbol| *symbol == ' ' || !unknown.contains(symbol))
         .collect()
+}
+
+/// `phonemes` with the sounds Kokoro says badly in the reading code `code` respelt as it says them
+/// well, judged by ear by the owner.
+///
+/// Italian's ʎ (gli, meglio) comes out wrong from Kokoro's Italian voices, closer to an l or a j:
+/// a palatalised l is right, long where jespersen writes ʎ long, between vowels (meglio mˈɛlʲːo;
+/// owner, 27 October 2026, against ʎ, ʎʎ, ʎː, lj and its long forms).
+fn kokoro_sounds<'a>(phonemes: &'a str, code: &str) -> std::borrow::Cow<'a, str> {
+    if code == "it" && phonemes.contains('\u{028E}') {
+        phonemes
+            .replace("\u{028E}\u{028E}", "l\u{02B2}\u{02D0}")
+            .replace('\u{028E}', "l\u{02B2}")
+            .into()
+    } else {
+        phonemes.into()
+    }
 }
 
 /// The symbol Kokoro reads for `symbol`: itself, or the closest one in its vocabulary.
