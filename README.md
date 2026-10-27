@@ -93,6 +93,25 @@ the split; kempelen matches them exactly, sample for sample ([docs/parity.md](do
 test:model`, `test:offline` and `bench`. More in [AGENTS.md](AGENTS.md); the open work in
 [TODO.md](TODO.md).
 
+## Releasing
+
+A release is the tag `v<version>` on `main`, with the version set once in the
+root `Cargo.toml` (`[workspace.package]`). There is no GitHub release or
+crates.io upload (the crates are `publish = false`), so plain Git is enough:
+no token, only the credentials you already push with. Programs still pin the
+commit a tag names (`git rev-parse v<version>^{commit}`), which no later
+change to the tag can move.
+
+Run `mise run tag` on `main` with everything committed and pushed or
+pulled. It asks the new version (Enter for the next patch, or the current
+one when it was never tagged), writes it to `Cargo.toml` and `Cargo.lock`
+and commits those alone (`[release] kempelen <version>` by default, with
+the hooks), tags `v<version>` (annotated), then asks before
+`git push --atomic origin main v<version>`. Nothing changes before the
+commit; if you stop after it, it says what it did, how to push later and
+how to undo it here. The tool is the `kempelen-tag` crate, copied from
+jespersen's.
+
 ## Licence
 
 [Apache-2.0](LICENSE), with the [NOTICE](NOTICE). The Mandarin front end is a port of misaki

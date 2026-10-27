@@ -51,6 +51,7 @@ published to crates.io. Owner: Federiker.
 | `crates/kempelen/mandarin` | The Mandarin readings (pypinyin, misaki, OpenCC data) and their generator |
 | `crates/kempelen/tests` | Unit tests (`tests/unit`), integration tests (`tests/it`, one program), the golden corpora (`tests/golden`) |
 | `crates/parity` | `kempelen-parity` (unpublished): the references recorded from manuzio and the checks against them, which manuzio can run too |
+| `crates/tag` | `kempelen-tag` (unpublished): `mise run tag`, which sets the version, commits it, tags `v<version>` and pushes, asking at each step (README, "Releasing"); copied from jespersen's |
 | `scripts` | `speech.ts` stages the speech files (development, CI, installers); install scripts; the commit-message hook |
 | `docs` | The documentation (index below) |
 | `tmp` | Gitignored: staged speech files, eSpeak NG captures, the reference harness (`tmp/harness`, path dependencies on `../manuzio`), experiments |
