@@ -1,0 +1,146 @@
+name: Checks
+
+# Two tiers (AGENTS.md, "Tests"). The light tier needs no model: pushes to main and every pull
+# request run it on Linux and Windows (a branch with a pull request runs once). The model tier runs
+# Kokoro on the CPU with the pinned model and voices (about 349 MB, cached by the manifest's hash):
+# on pushes to main and on demand only. Security advisories run weekly in advisories.yml, so a new
+# advisory never fails an unrelated push.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Platforms for the light tier
+        type: choice
+        required: true
+        default: all
+        options:
+          - all
+          - windows
+          - macos
+          - linux
+      model:
+        description: Also run the model tier (stages the model and voices from the cache, or downloads them)
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+# A newer push to the same branch or pull request cancels its older run; manual runs are kept.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'workflow_dispatch' }}
+
+jobs:
+  light:
+    name: Light tier (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        # Linux and Windows for pushes and pull requests; the chosen platforms for a manual run.
+        os: >-
+          ${{ fromJSON(
+            github.event_name != 'workflow_dispatch' && '["ubuntu-24.04", "windows-2022"]' ||
+            inputs.platform == 'windows' && '["windows-2022"]' ||
+            inputs.platform == 'macos' && '["macos-15"]' ||
+            inputs.platform == 'linux' && '["ubuntu-24.04"]' ||
+            '["ubuntu-24.04", "windows-2022", "macos-15"]'
+          ) }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      # The tools pinned in mise.toml; `mise run` runs its tasks (`mise run ci` runs these steps locally).
+      - uses: jdx/mise-action@v5
+      # The Rust toolchain pinned in rust-toolchain.toml.
+      - run: rustup toolchain install
+      # OpenSSL's headers, for ort-sys' download of ONNX Runtime at build time and the CUDA download
+      # (feature `cuda-install`).
+      - name: Linux libraries
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config libssl-dev
+      - uses: Swatinem/rust-cache@v2
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Script packages
+        run: bun install --frozen-lockfile
+      # Quick checks first.
+      - run: mise run fmt
+      - run: mise run spell
+      - run: mise run links
+      - run: mise run machete
+      - run: mise run deny
+      - run: mise run scripts
+      # Then the build and the tests.
+      - run: mise run clippy
+      - name: The light tier
+        run: |
+          cargo nextest run --locked --workspace --all-features --profile ci
+          cargo test --locked --workspace --all-features --doc
+      - name: Keep the test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: light-${{ matrix.os }}
+          path: target/nextest/ci/junit.xml
+          if-no-files-found: ignore
+
+  model:
+    name: Model tier (ubuntu-24.04)
+    if: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.model) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    defaults:
+      run:
+        shell: bash
+    env:
+      # Where the tests and the parity check read the model and voices (the library never reads it).
+      KEMPELEN_DATA_DIR: ${{ github.workspace }}/tmp/speech
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@v5
+      - run: rustup toolchain install
+      - name: Linux libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config libssl-dev
+      - uses: Swatinem/rust-cache@v2
+        with:
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Script packages
+        run: bun install --frozen-lockfile
+      # The pinned model and voices, kept while the manifest is unchanged.
+      - name: Restore the speech files
+        uses: actions/cache@v4
+        with:
+          path: tmp/speech
+          key: speech-${{ hashFiles('crates/kempelen/assets/speech-assets.json') }}
+      # Checks every cached file's size and SHA-256 and downloads only what is missing or damaged:
+      # the whole set (about 349 MB, from Hugging Face) on a cache miss.
+      - name: Stage the speech files
+        run: bun scripts/speech.ts "$KEMPELEN_DATA_DIR"
+      # This runner's thread count differs from the references' machine, so the parity test checks
+      # the phonemes here and reports the samples as not comparable (docs/parity.md).
+      - name: The model tier
+        run: mise run test:model
+      - name: Every voice, offline
+        run: mise run test:offline
+      - name: Keep the test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: model
+          path: target/nextest/model/junit.xml
+          if-no-files-found: ignore
