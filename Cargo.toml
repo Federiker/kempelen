@@ -20,8 +20,8 @@ crustytts-core = "0.4.0"
 crustytts-tokenizer = "0.4.0"
 futures-util = "0.3.31"
 # Text to phonemes (CC0, docs/jespersen.md): every language but Mandarin, which has its own front
-# end in src/phonemes/chinese. Pinned to a commit; bump `rev` to take a newer jespersen.
-jespersen = { git = "https://github.com/Federiker/jespersen", rev = "a88d71d29f578083cd01362d3e3394407f29a3b7", default-features = false, features = ["af", "ak", "ca", "cs", "cy", "da", "de", "ee", "el", "en", "es", "et", "eu", "fi", "fr", "ga", "ha", "hr", "hu", "id", "ig", "is", "it", "lg", "ln", "lt", "lv", "mk", "ms", "nb", "nl", "om", "pl", "pt", "rn", "ro", "ru", "rw", "sk", "sl", "sn", "so", "sq", "sr", "sv", "sw", "tr", "yo"] }
+# end in src/phonemes/chinese. Pinned to a release tag; bump `tag` to take a newer jespersen.
+jespersen = { git = "https://github.com/Federiker/jespersen", tag = "v0.1.0", default-features = false, features = ["af", "ak", "ca", "cs", "cy", "da", "de", "ee", "el", "en", "es", "et", "eu", "fi", "fr", "ga", "ha", "hr", "hu", "id", "ig", "is", "it", "lg", "ln", "lt", "lv", "mk", "ms", "nb", "nl", "om", "pl", "pt", "rn", "ro", "ru", "rw", "sk", "sl", "sn", "so", "sq", "sr", "sv", "sw", "tr", "yo"] }
 jieba-rs = "0.11"
 kempelen = { path = "crates/kempelen" }
 kempelen-parity = { path = "crates/parity" }

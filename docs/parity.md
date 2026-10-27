@@ -55,6 +55,18 @@ owner before recording new references. CUDA output is never compared (it differs
 test `without_the_gpu_runtime_narration_falls_back_to_the_same_cpu_samples` checks that a missing GPU
 runtime leaves the CPU's own samples.
 
+### Changed on purpose since the recording
+
+The references are manuzio's output, except where the owner chose a better reading. Each change is
+listed here, and the rest of the references stay as recorded:
+
+| When | What | Lines | Why |
+| --- | --- | --- | --- |
+| 27 October 2026 | jespersen `a88d71d` → v0.1.0 (`23a215b`) | 2 Italian lines: the verb "è" becomes `ˈɛ` instead of `e` ("la cioccolata è meglio", "la città è così silenziosa") | jespersen's fix `e9c91a3` stresses it, as Italian says it; owner, 27 October 2026: keep the correct reading. None of the 42 syntheses has an "è", so the samples are unchanged |
+
+manuzio's adapters give the new readings once manuzio narrates through kempelen, so its check after
+switching uses these references too. melies's references hold no "è" and stay as they are.
+
 ## manuzio after switching
 
 manuzio keeps its own types (`VoiceId`, `Language`, its data folder and variables) and maps them onto

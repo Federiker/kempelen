@@ -116,7 +116,7 @@ kempelen = { git = "https://github.com/Federiker/kempelen", rev = "…" }
 
 It maps its own types (its saved voice ids, book languages, data folder, `MNZ_` variables) onto
 kempelen's, stages the same speech files for its installer from this repository's manifest, and runs
-`kempelen-parity` against its adapters after switching. jespersen is pinned here, by commit, with
+`kempelen-parity` against its adapters after switching. jespersen is pinned here, by its release tag, with
 every language but `zh`: updating jespersen means bumping it here, checking the references, then
 bumping kempelen in manuzio. What was copied from manuzio, and from which commit:
 [docs/provenance.md](docs/provenance.md).

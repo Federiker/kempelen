@@ -879,7 +879,7 @@ checksum = "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
 [[package]]
 name = "jespersen"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_lang_af",
  "jespersen_lang_ak",
@@ -938,7 +938,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_af"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -948,7 +948,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ak"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -958,7 +958,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ca"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -968,7 +968,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_cs"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -978,7 +978,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_cy"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -988,7 +988,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_da"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_lexicon",
  "jespersen_phonemes",
@@ -999,7 +999,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_de"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1009,7 +1009,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ee"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1019,7 +1019,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_el"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1029,7 +1029,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_en"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_lexicon",
  "jespersen_lts",
@@ -1040,7 +1040,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_es"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1050,7 +1050,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_et"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1060,7 +1060,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_eu"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1070,7 +1070,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_fi"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1080,7 +1080,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_fr"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1090,7 +1090,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ga"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1100,7 +1100,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ha"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1110,7 +1110,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_hr"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1120,7 +1120,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_hu"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1130,7 +1130,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_id"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1140,7 +1140,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ig"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1150,7 +1150,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_is"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1160,7 +1160,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_it"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1170,7 +1170,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_lg"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1180,7 +1180,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ln"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1190,7 +1190,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_lt"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1200,7 +1200,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_lv"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1210,7 +1210,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_mk"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1220,7 +1220,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ms"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1230,7 +1230,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_nb"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1240,7 +1240,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_nl"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1250,7 +1250,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_om"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1260,7 +1260,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_pl"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1270,7 +1270,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_pt"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1280,7 +1280,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_rn"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1290,7 +1290,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ro"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1300,7 +1300,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_ru"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1310,7 +1310,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_rw"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1320,7 +1320,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_sk"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1330,7 +1330,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_sl"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1340,7 +1340,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_sn"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1350,7 +1350,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_so"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1360,7 +1360,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_sq"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1370,7 +1370,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_sr"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1380,7 +1380,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_sv"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_lexicon",
  "jespersen_phonemes",
@@ -1391,7 +1391,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_sw"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1401,7 +1401,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_tr"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1411,7 +1411,7 @@ dependencies = [
 [[package]]
 name = "jespersen_lang_yo"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_spoken",
@@ -1421,22 +1421,22 @@ dependencies = [
 [[package]]
 name = "jespersen_lexicon"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 
 [[package]]
 name = "jespersen_lts"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 
 [[package]]
 name = "jespersen_phonemes"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 
 [[package]]
 name = "jespersen_spoken"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "jespersen_phonemes",
  "jespersen_text",
@@ -1445,7 +1445,7 @@ dependencies = [
 [[package]]
 name = "jespersen_text"
 version = "0.1.0"
-source = "git+https://github.com/Federiker/jespersen?rev=a88d71d29f578083cd01362d3e3394407f29a3b7#a88d71d29f578083cd01362d3e3394407f29a3b7"
+source = "git+https://github.com/Federiker/jespersen?tag=v0.1.0#23a215be215a1a6eb0965af3f20cb092b54e2efd"
 dependencies = [
  "unicode-segmentation",
 ]
