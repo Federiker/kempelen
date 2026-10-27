@@ -1,6 +1,6 @@
 [env]
 # Pin ort's prebuilt ONNX Runtime to the CUDA 12 flavour that matches the GPU
-# speech runtime downloaded by mnz-tts (crates/tts/src/cuda.rs), regardless of any
+# speech runtime kempelen installs (crates/kempelen/src/cuda/mod.rs), regardless of any
 # CUDA toolkit installed on the build machine.
 ORT_CUDA_VERSION = "12"
 

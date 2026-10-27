@@ -126,7 +126,12 @@ impl Outcome {
             },
             Produced::Wav(bytes) => plain(Digest::of_wav(bytes)),
             Produced::Chunks(chunks) => Self {
-                chunks: Some(chunks.iter().map(|chunk| Digest::of_samples(chunk)).collect()),
+                chunks: Some(
+                    chunks
+                        .iter()
+                        .map(|chunk| Digest::of_samples(chunk))
+                        .collect(),
+                ),
                 ..plain(Digest::of_samples(&chunks.concat()))
             },
             Produced::Failed(_) => Self {
@@ -160,7 +165,8 @@ impl SynthesisReferences {
             clippy::expect_used,
             reason = "the committed references are checked by this crate's tests"
         )]
-        serde_json::from_str(include_str!("../references/synthesis.json")).expect("valid synthesis references")
+        serde_json::from_str(include_str!("../references/synthesis.json"))
+            .expect("valid synthesis references")
     }
 }
 

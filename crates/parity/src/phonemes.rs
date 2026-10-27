@@ -27,7 +27,8 @@ impl PhonemeReferences {
             clippy::expect_used,
             reason = "the committed references are checked by this crate's tests"
         )]
-        serde_json::from_str(include_str!("../references/phonemes.json")).expect("valid phoneme references")
+        serde_json::from_str(include_str!("../references/phonemes.json"))
+            .expect("valid phoneme references")
     }
 }
 

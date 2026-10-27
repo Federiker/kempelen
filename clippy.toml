@@ -4,4 +4,4 @@ allow-unwrap-in-tests = true
 allow-expect-in-tests = true
 
 # Names written as they are spelt, not code, in doc comments (".." keeps Clippy's own list).
-doc-valid-idents = ["ARPAbet", "CMUdict", "eSpeak", ".."]
+doc-valid-idents = ["ARPAbet", "CMUdict", "eSpeak", "FFmpeg", "OpenCC", "pypinyin", ".."]

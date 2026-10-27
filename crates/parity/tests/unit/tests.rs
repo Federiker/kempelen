@@ -12,7 +12,11 @@ fn the_committed_references_parse() {
 fn samples_are_digested_by_their_bits() {
     let digest = Digest::of_samples(&[0.0, -0.0]);
     assert_eq!(digest.samples, 2);
-    assert_ne!(digest, Digest::of_samples(&[0.0, 0.0]), "-0.0 is other bits");
+    assert_ne!(
+        digest,
+        Digest::of_samples(&[0.0, 0.0]),
+        "-0.0 is other bits"
+    );
 }
 
 #[test]

@@ -1,0 +1,285 @@
+{
+  "_comment": "Input for the phonemizer golden files. 'universal' lines are run in every language; 'languages' keys are kempelen's reading codes (they began as eSpeak NG's). Add lines freely, then regenerate with: cargo run -p kempelen --example golden -- capture",
+  "universal": [
+    "Hello, world!",
+    "1 2 3 4 5 6 7 8 9 10 11 12 13 20 21 30 42 99 100 101 1000 2024",
+    "3.5 and 1,000 and 2,50",
+    "1st 2nd 3rd 4th 21st",
+    "No. 5, Mr. Smith, Dr. Who, St. Peter, etc.",
+    "U.S.A. and U.K. and e.g. i.e.",
+    "It is 10:30 on 12/05/2024; the price is $19.99 or 15 EUR.",
+    "50% of 200 = 100",
+    "Wait... what?! (Really?) — yes; no: maybe.",
+    "“Quoted,” she said, «guillemets» and „loew“.",
+    "A-B C/D e–f well-known state-of-the-art",
+    "NASA ONU UNESCO PDF EPUB",
+    "I II III IV V IX X XIV XX",
+    "a",
+    "x y z"
+  ],
+  "languages": {
+    "en-us": [
+      "Mr. and Mrs. Dursley met Dr. Jones at No. 4 and L. Frank Baum, e.g. at noon, etc. Then they left.",
+      "The old lighthouse keeper climbed the stairs, as he did every evening.",
+      "\"Where have you been?\" she asked. \"Out walking,\" he replied.",
+      "Through the thorough thought, the rough cough, though.",
+      "Colonel Harris read the schedule, record, and project aloud.",
+      "In 1999 he bought 2 houses for $300,000 in New York."
+    ],
+    "en": [
+      "Mr. and Mrs. Dursley met Dr. Jones at No. 4 and L. Frank Baum, e.g. at noon, etc. Then they left.",
+      "The old lighthouse keeper climbed the stairs, as he did every evening.",
+      "\"Where have you been?\" she asked. \"Out walking,\" he replied.",
+      "Through the thorough thought, the rough cough, though.",
+      "The schedule for the laboratory was written in the colour of tea.",
+      "In 1999 he bought 2 houses for £300,000 in Manchester."
+    ],
+    "it": [
+      "Il Sig. Rossi e la Dott.ssa Bianchi, ad es. a pag. 5, ecc. Poi partirono.",
+      "Il vecchio guardiano del faro saliva le scale, come ogni sera.",
+      "«Dove sei stato?» chiese lei. «A passeggiare», rispose lui.",
+      "Gli gnocchi e la pizza sono buoni, ma la cioccolata è meglio.",
+      "Nel 1999 comprò 2 case per 300.000 euro a Roma.",
+      "Perché la città è così silenziosa stasera?"
+    ],
+    "es": [
+      "El Sr. García y la Dra. López, p. ej. en la pág. 7, etc. Luego se fueron.",
+      "El viejo farero subía las escaleras, como cada noche.",
+      "«¿Dónde has estado?» preguntó ella. «Paseando», respondió él.",
+      "El niño comió jamón y bebió agua en la calle.",
+      "En 1999 compró 2 casas por 300.000 euros en Madrid.",
+      "¡Qué hermosa mañana!"
+    ],
+    "fr": [
+      "M. Dupont et le Dr. Martin, p. ex. à la p. 12, etc. Puis ils sont partis.",
+      "Le vieux gardien du phare montait l'escalier, comme chaque soir.",
+      "« Où étais-tu ? » demanda-t-elle. « Je me promenais », répondit-il.",
+      "Les oiseaux chantent à l'aube dans le jardin fleuri.",
+      "En 1999, il acheta 2 maisons pour 300 000 euros à Paris.",
+      "Il y a un hôtel près de l'église, n'est-ce pas ?"
+    ],
+    "cmn": [
+      "老灯塔守与往常一样，每天晚上都要爬上楼梯。",
+      "“你去哪里了？”她问道。“出去散步。”他回答。",
+      "中国的首都是北京，上海是最大的城市。",
+      "1999年，他以300000元买了两套房子。",
+      "今天天气很好，我们一起去公园吧！"
+    ],
+    "pt": [
+      "O Sr. Silva e a Dra. Costa, p. ex. na pág. 8, etc. Depois partiram.",
+      "O velho faroleiro subia as escadas, como todas as noites.",
+      "— Onde estiveste? — perguntou ela. — A passear — respondeu ele.",
+      "A criança comeu pão com manteiga e bebeu leite.",
+      "Em 1999 comprou 2 casas por 300.000 euros em Lisboa.",
+      "Que manhã tão bonita, não é?"
+    ],
+    "cy": [
+      "Roedd y Parch. Jones a Dr. Evans yno, e.e. ar dud. 5, ayb. Yna gadawsant.",
+      "Dringodd ceidwad y goleudy y grisiau, fel bob nos.",
+      "\"Ble rwyt ti wedi bod?\" gofynnodd hi. \"Allan yn cerdded,\" atebodd yntau.",
+      "Mae'r llyfr yn ddiddorol iawn ac mae'r ysgol yn fawr.",
+      "Yn 1999 prynodd 2 dŷ am 300,000 punt yng Nghaerdydd.",
+      "Bore da, sut wyt ti heddiw?"
+    ],
+    "da": [
+      "Hr. Jensen kom den 3. maj, f.eks. kl. 5, osv. Så gik han.",
+      "Den gamle fyrvogter gik op ad trappen, som han gjorde hver aften.",
+      "“Hvor har du været?” spørgte hun. “Ude at gå en tur,” svarede han.",
+      "Det er en dejlig dag i København, og rødgrød med fløde smager godt.",
+      "I 1999 købte han 2 huse for 300.000 kroner i Århus.",
+      "Hvad hedder du, og hvor bor du?"
+    ],
+    "de": [
+      "Am 3. Mai kam Dr. Müller mit Hrn. Meier, z. B. zur Nr. 5, usw. Dann gingen sie.",
+      "Der alte Leuchtturmwärter stieg die Treppe hinauf, wie jeden Abend.",
+      "„Wo bist du gewesen?“ fragte sie. „Spazieren“, antwortete er.",
+      "Größere Bücher, und ich möchte acht Brötchen mit Käse.",
+      "1999 kaufte er 2 Häuser für 300.000 Euro in München.",
+      "Das Mädchen sprach über Zucker, Quark und Schätze."
+    ],
+    "fi": [
+      "Prof. Virtanen tuli 3. toukokuuta, esim. v. 1999, jne. Sitten hän lähti.",
+      "Vanha majakkamestari nousi portaita, kuten joka ilta.",
+      "”Missä olet ollut?” hän kysyi. ”Kävelyllä”, hän vastasi.",
+      "Hyvää huomenta, mitä kuuluu tänään?",
+      "Vuonna 1999 hän osti 2 taloa 300 000 eurolla Helsingistä.",
+      "Jäätelö ja yöpyminen maksavat paljon."
+    ],
+    "is": [
+      "Dr. Jónsson kom 3. maí, t.d. kl. 5, o.s.frv. Síðan fór hann.",
+      "Gamli vitavörðurinn gekk upp stigann, eins og öll kvöld.",
+      "„Hvar hefur þú verið?“ spurði hún. „Í göngutúr“, svaraði hann.",
+      "Góðan daginn, hvernig hefur þú það?",
+      "Árið 1999 keypti hann 2 hús fyrir 300.000 krónur í Reykjavík.",
+      "Þetta er fallegur dagur á Íslandi."
+    ],
+    "nl": [
+      "Dhr. Jansen en mevr. De Vries, bijv. op blz. 4, enz. Daarna vertrokken ze.",
+      "De oude vuurtorenwachter beklom de trap, zoals elke avond.",
+      "“Waar ben je geweest?” vroeg ze. “Een eindje wandelen”, antwoordde hij.",
+      "De kleine jongen loopt naar huis en eet een boterham met kaas.",
+      "In 1999 kocht hij 2 huizen voor 300.000 euro in Amsterdam.",
+      "Wat een prachtige ochtend, nietwaar?"
+    ],
+    "no": [
+      "Hr. Hansen kom 3. mai, f.eks. kl. 5, osv. Så gikk han.",
+      "Den gamle fyrvokteren gikk opp trappen, slik han gjorde hver kveld.",
+      "«Hvor har du vært?» spurte hun. «Ute og gikk en tur», svarte han.",
+      "God morgen, hvordan har du det i dag?",
+      "I 1999 kjøpte han 2 hus for 300 000 kroner i Bergen.",
+      "Kjærlighet og sjømannsliv i skjærgården."
+    ],
+    "pl": [
+      "Prof. Nowak mieszka przy ul. Długiej, np. w 3. rozdziale, itd. Potem wyjechał.",
+      "Stary latarnik wchodził po schodach, jak każdego wieczoru.",
+      "— Gdzie byłeś? — zapytała. — Na spacerze — odpowiedział.",
+      "Wszystko się zmieniło, gdy przyszła zima.",
+      "W 1999 roku kupił 2 domy za 300 000 złotych w Krakowie.",
+      "Chrząszcz brzmi w trzcinie w Szczebrzeszynie."
+    ],
+    "ru": [
+      "Проф. Иванов живёт на ул. Ленина, т. е. рядом, см. стр. 5 и т. д. Потом он ушёл.",
+      "Старый смотритель маяка поднимался по лестнице, как каждый вечер.",
+      "«Где ты был?» — спросила она. «Гулял», — ответил он.",
+      "Мама мыла раму, и дела идут хорошо.",
+      "В 1999 году он купил 2 дома за 300 000 рублей в Москве.",
+      "Съешь ещё этих мягких французских булок, да выпей чаю."
+    ],
+    "sv": [
+      "Prof. Svensson kom kl. 5, t.ex. till nr. 3, osv. Sedan gick han.",
+      "Den gamle fyrvaktaren gick uppför trappan, som varje kväll.",
+      "”Var har du varit?” frågade hon. ”Ute på promenad”, svarade han.",
+      "God morgon, hur mår du idag?",
+      "År 1999 köpte han 2 hus för 300 000 kronor i Göteborg.",
+      "Sjuttiosju sjösjuka sjömän på skeppet."
+    ],
+    "ca": [
+      "El Sr. Puig i la Dra. Vidal, p. ex. a la pàg. 5, etc. Després van marxar.",
+      "El vell faroner pujava l'escala, com cada vespre.",
+      "«On has estat?» va preguntar ella. «Passejant», va respondre ell.",
+      "El llibre explica una història interessant de la ciutat.",
+      "El 1999 va comprar 2 cases per 300.000 euros a Barcelona.",
+      "Això és una fotografia molt bonica."
+    ],
+    "ro": [
+      "Dl. Popescu și dna. Ionescu, de ex. la pag. 5, etc. Apoi au plecat.",
+      "Bătrânul paznic al farului urca scările, ca în fiecare seară.",
+      "„Unde ai fost?” a întrebat ea. „la plimbare”, a răspuns el.",
+      "Țara noastră are munți frumoși și râuri adânci.",
+      "În 1999 a cumpărat 2 case cu 300.000 de lei în București.",
+      "Bună dimineața, ce mai faci astăzi?"
+    ],
+    "cs": [
+      "Prof. Novák bydlí v ul. Dlouhé, např. v 3. patře, atd. Potom odešel.",
+      "Starý strážce majáku vystupoval po schodech jako každý večer.",
+      "„Kde jsi byl?“ zeptala se. „Chodil jsem ven“, odpověděl.",
+      "Příliš žluťoučký kůň úpěl ďábelské ódy.",
+      "V roce 1999 koupil 2 domy za 300 000 korun v Praze.",
+      "Strč prst skrz krk."
+    ],
+    "sk": [
+      "Prof. Kováč býva na ul. Hlavnej, napr. na 3. poschodí, atď. Potom odišiel.",
+      "Starý strážca majáka vystupoval po schodoch ako každý večer.",
+      "„Kde si bol?“ spýtala sa. „Bol som von“, odpovedal.",
+      "Kŕdeľ ďatľov učí koňa žrať kôru.",
+      "V roku 1999 kúpil 2 domy za 300 000 eur v Bratislave.",
+      "Dobré ráno, ako sa dnes máš?"
+    ],
+    "hr": [
+      "Prof. Horvat živi u ul. Ilica, npr. na br. 3, itd. Zatim je otišao.",
+      "Stari svjetioničar penjao se stubama, kao svake večeri.",
+      "„Gdje si bio?“ upitala je. „Setao sam“, odgovorio je.",
+      "Šuma je puna ptica i čaja od đumbira.",
+      "Godine 1999. kupio je 2 kuće za 300.000 kuna u Zagrebu.",
+      "Dobro jutro, kako si danas?"
+    ],
+    "sl": [
+      "Prof. Novak živi na ul. Prešerna, npr. na št. 3, itd. Potem je odšel.",
+      "Stari svetilničar se je vzpenjal po stopnicah, kot vsak večer.",
+      "„Kje si bil?“ je vprašala. „Bil sem na sprehodu“, je odgovoril.",
+      "Šumi in žuboreči potok teče skozi dolino.",
+      "Leta 1999 je kupil 2 hiši za 300.000 evrov v Ljubljani.",
+      "Dobro jutro, kako si danes?"
+    ],
+    "hu": [
+      "Dr. Kovács a Kossuth u. 3. alatt lakik, pl. 5 órakor, stb. Aztán elment.",
+      "Az öreg világítótorony-őr felment a lépcsőn, mint minden este.",
+      "„Hol voltál?” kérdezte a lány. „Sétáltam”, felelte a fiú.",
+      "Árvíztűrő tükörfúrógép, egészségedre!",
+      "1999-ben vett 2 házat 300 000 forintért Budapesten.",
+      "Jó reggelt, hogy vagy ma?"
+    ],
+    "tr": [
+      "Prof. Yılmaz Atatürk Cad. üzerinde oturur, örn. 3. katta, vs. Sonra gitti.",
+      "Yaşlı fener bekçisi her akşam olduğu gibi merdivenleri çıktı.",
+      "“Nerede oldun?” diye sordu. “Yürüyüşteydim”, diye cevap verdi.",
+      "Pijamalı hasta yağız şoföre çabucak güvendi.",
+      "1999'da İstanbul'da 300.000 liraya 2 ev satın aldı.",
+      "Günaydın, bugün nasılsın?"
+    ],
+    "et": [
+      "Prof. Tamm tuli 3. mail, nt. lk. 5 juurde, jne. Siis ta lahkus.",
+      "Vana tuletornivaht ronis treppi mööda üles, nagu igal õhtul.",
+      "„Kus sa oled olnud?“ küsis naine. „Jalutamas“, vastas mees.",
+      "Põdra maja on järve ääres ja öö on pime.",
+      "1999. aastal ostis ta 2 maja 300 000 euro eest Tallinnas.",
+      "Tere hommikust, kuidas läheb?"
+    ],
+    "lv": [
+      "Prof. Bērziņš ieradās 3. maijā, piem. uz 5. lpp., utt. Tad viņš aizgāja.",
+      "Vecais bākas uzraugs kāpa augšā pa kāpnēm, kā katru vakaru.",
+      "“Kur tu biji?” viņa jautāja. “Staigāju”, viņš atbildēja.",
+      "Čaklā ķirzaka ēd ģirti un žāvētu zivi.",
+      "1999. gadā viņš nopirka 2 mājas par 300 000 eiro Rīgā.",
+      "Labrīt, kā tev šodien klājas?"
+    ],
+    "lt": [
+      "Prof. Kazlauskas gyvena Gedimino g., pvz. 1999 m. ten buvo, ir t. t. Paskui išėjo.",
+      "Senasis švyturio sargas lipo laiptais, kaip kiekvieną vakarą.",
+      "„Kur buvai?“ paklausė ji. „Vaikščiojau“, atsakė jis.",
+      "Ąžuolų giraitėje čiulba paukščiai ir šiaurės vėjas šnara.",
+      "1999 metais jis nupirko 2 namus už 300 000 eurų Vilniuje.",
+      "Labas rytas, kaip sekasi šiandien?"
+    ],
+    "af": [
+      "Mnr. Botha en dr. Smit, bv. op bl. 4, ens. Toe het hulle vertrek.",
+      "Die ou vuurtoringwagter het die trap geklim, soos elke aand.",
+      "“Waar was jy?” vra sy. “Ek was gaan stap”, antwoord hy.",
+      "Goeie more, hoe gaan dit vandag met jou?",
+      "In 1999 het hy 2 huise vir 300 000 rand in Kaapstad gekoop.",
+      "Die kinders speel in die tuin met hul hond."
+    ],
+    "sq": [
+      "Erdhën z. Hoxha dhe znj. Shehu, p.sh. në f. 5, etj. Pastaj u larguan.",
+      "Rojtari i vjetër i fenerit ngjitej shkallëve, si çdo mbrëmje.",
+      "“Ku ke qenë?” pyeti ajo. „Po shëtisja“, u përgjigj ai.",
+      "Mirëmëngjes, si je sot?",
+      "Në vitin 1999 bleu 2 shtëpi për 300.000 lekë në Tiranë.",
+      "Një ditë e bukur për të ecur në mal."
+    ],
+    "id": [
+      "Bpk. Hasan tinggal di Jl. Merdeka No. 5, mis. di hlm. 3, dll. Lalu dia pergi.",
+      "Penjaga mercusuar tua itu menaiki tangga, seperti setiap malam.",
+      "“Dari mana saja kamu?” tanya dia. “Berjalan-jalan”, jawabnya.",
+      "Selamat pagi, apa kabar hari ini?",
+      "Pada tahun 1999 dia membeli 2 rumah seharga 300.000 rupiah di Jakarta.",
+      "Saya makan nasi goreng dan minum teh manis."
+    ],
+    "eu": [
+      "Liburu hau, adib. or. 5ean, ona da, etab. Gero joan zen.",
+      "Itsasargiko zaintzaile zaharrak eskailerak igo zituen, gau guztietan bezala.",
+      "“Non egon zara?” galdetu zuen ark. “Paseatzen”, erantzun zuen hark.",
+      "Egun on, zer moduz zaude gaur?",
+      "1999an 2 etxe erosi zituen 300.000 eurotan Bilbon.",
+      "Euskara hizkuntza zaharra eta ederra da."
+    ],
+    "ga": [
+      "Bhí an Dr. Ó Sé ag Uimh. 5, m.sh. ar lch. 3, srl. Ansin d'imigh sé.",
+      "Chuaigh seanchoimeádaí an tsolais suas an staighre, mar a dhéanadh gach oíche.",
+      "“Cá raibh tú?” ar sise. “Amuigh ag siúl”, ar seisean.",
+      "Dia duit, conas atá tú inniu?",
+      "I 1999 cheannaigh sé 2 theach ar 300,000 euro i mBaile Átha Cliath.",
+      "Is é an Ghaeilge teanga náisiúnta na hÉireann."
+    ]
+  }
+}

@@ -1,4 +1,4 @@
 # The edition is repeated here so that `rustfmt` on single files (the pre-commit hook) formats like
-# `cargo fmt`.
+# `cargo fmt`. The width is rustfmt's default, as in manuzio, which the code was copied from: the
+# same formatting keeps later changes there easy to port (docs/provenance.md).
 edition = "2024"
-max_width = 120

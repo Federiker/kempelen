@@ -1,0 +1,48 @@
+[package]
+name = "kempelen"
+description = "Local speech: Kokoro ONNX synthesis with jespersen's pronunciation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[features]
+# GPU detection through NVML and Vulkan (src/gpu): which accelerator a machine has.
+gpu = ["dep:ash", "dep:nvml-wrapper"]
+# Installing the CUDA runtime (src/cuda/install.rs): about 1.6 GB of pinned archives, downloaded.
+cuda-install = ["dep:futures-util", "dep:lzma-rust2", "dep:reqwest", "dep:zip"]
+
+[dependencies]
+crustytts-core = { workspace = true }
+crustytts-tokenizer = { workspace = true }
+jespersen = { workspace = true }
+jieba-rs = { workspace = true }
+log = { workspace = true }
+ndarray = { workspace = true }
+ort = { workspace = true }
+regex = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }
+ash = { workspace = true, optional = true }
+futures-util = { workspace = true, optional = true }
+lzma-rust2 = { workspace = true, optional = true }
+nvml-wrapper = { workspace = true, optional = true }
+reqwest = { workspace = true, optional = true }
+zip = { workspace = true, optional = true }
+
+# The static ONNX Runtime core with the CUDA plugin interface; see src/cuda/mod.rs. It is the same
+# core manuzio links, and the CPU output depends on it.
+[target.'cfg(all(windows, target_arch = "x86_64"))'.dependencies]
+ort = { workspace = true, features = ["cuda", "preload-dylibs"] }
+
+[dev-dependencies]
+anyhow = { workspace = true }
+kempelen-parity = { workspace = true }
+tokio = { workspace = true }
+
+[lints]
+workspace = true

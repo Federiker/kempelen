@@ -1,0 +1,2289 @@
+{
+  "en": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "Mr.",
+        "spoken": "Mister"
+      },
+      {
+        "written": "Mrs.",
+        "spoken": "Missus"
+      },
+      {
+        "written": "Ms.",
+        "spoken": "Miz"
+      },
+      {
+        "written": "Messrs.",
+        "spoken": "Messieurs"
+      },
+      {
+        "written": "Dr.",
+        "spoken": "Doctor"
+      },
+      {
+        "written": "St.",
+        "spoken": "Saint"
+      },
+      {
+        "written": "Prof.",
+        "spoken": "Professor"
+      },
+      {
+        "written": "Rev.",
+        "spoken": "Reverend"
+      },
+      {
+        "written": "Fr.",
+        "spoken": "Father"
+      },
+      {
+        "written": "Capt.",
+        "spoken": "Captain"
+      },
+      {
+        "written": "Gen.",
+        "spoken": "General"
+      },
+      {
+        "written": "Col.",
+        "spoken": "Colonel"
+      },
+      {
+        "written": "Lt.",
+        "spoken": "Lieutenant"
+      },
+      {
+        "written": "Sgt.",
+        "spoken": "Sergeant"
+      },
+      {
+        "written": "Hon.",
+        "spoken": "Honourable"
+      },
+      {
+        "written": "Mt.",
+        "spoken": "Mount"
+      },
+      {
+        "written": "Jr.",
+        "spoken": "Junior",
+        "canEndSentence": true
+      },
+      {
+        "written": "Sr.",
+        "spoken": "Senior",
+        "canEndSentence": true
+      },
+      {
+        "written": "Bros.",
+        "spoken": "Brothers",
+        "canEndSentence": true
+      },
+      {
+        "written": "Co.",
+        "spoken": "Company",
+        "canEndSentence": true
+      },
+      {
+        "written": "Inc.",
+        "spoken": "Incorporated",
+        "canEndSentence": true
+      },
+      {
+        "written": "Ltd.",
+        "spoken": "Limited",
+        "canEndSentence": true
+      },
+      {
+        "written": "etc.",
+        "spoken": "et cetera",
+        "canEndSentence": true
+      },
+      {
+        "written": "e.g.",
+        "spoken": "for example"
+      },
+      {
+        "written": "i.e.",
+        "spoken": "that is"
+      },
+      {
+        "written": "viz.",
+        "spoken": "namely"
+      },
+      {
+        "written": "cf.",
+        "spoken": "compare"
+      },
+      {
+        "written": "vs.",
+        "spoken": "versus"
+      },
+      {
+        "written": "approx.",
+        "spoken": "approximately"
+      },
+      {
+        "written": "ca.",
+        "spoken": "circa"
+      },
+      {
+        "written": "esp.",
+        "spoken": "especially"
+      },
+      {
+        "written": "No.",
+        "spoken": "number",
+        "beforeNumber": true
+      },
+      {
+        "written": "Nos.",
+        "spoken": "numbers",
+        "beforeNumber": true
+      },
+      {
+        "written": "p.",
+        "spoken": "page",
+        "beforeNumber": true
+      },
+      {
+        "written": "pp.",
+        "spoken": "pages",
+        "beforeNumber": true
+      },
+      {
+        "written": "vol.",
+        "spoken": "volume",
+        "beforeNumber": true
+      },
+      {
+        "written": "ch.",
+        "spoken": "chapter",
+        "beforeNumber": true
+      },
+      {
+        "written": "fig.",
+        "spoken": "figure",
+        "beforeNumber": true
+      }
+    ]
+  },
+  "it": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "Sig.",
+        "spoken": "signor"
+      },
+      {
+        "written": "Sig.ra",
+        "spoken": "signora"
+      },
+      {
+        "written": "Sigg.",
+        "spoken": "signori"
+      },
+      {
+        "written": "Dott.",
+        "spoken": "dottor"
+      },
+      {
+        "written": "Dott.ssa",
+        "spoken": "dottoressa"
+      },
+      {
+        "written": "Prof.",
+        "spoken": "professor"
+      },
+      {
+        "written": "Prof.ssa",
+        "spoken": "professoressa"
+      },
+      {
+        "written": "Avv.",
+        "spoken": "avvocato"
+      },
+      {
+        "written": "Ing.",
+        "spoken": "ingegner"
+      },
+      {
+        "written": "Arch.",
+        "spoken": "architetto"
+      },
+      {
+        "written": "ecc.",
+        "spoken": "eccetera",
+        "canEndSentence": true
+      },
+      {
+        "written": "p.es.",
+        "spoken": "per esempio"
+      },
+      {
+        "written": "ad es.",
+        "spoken": "ad esempio"
+      },
+      {
+        "written": "cfr.",
+        "spoken": "confronta"
+      },
+      {
+        "written": "pag.",
+        "spoken": "pagina",
+        "beforeNumber": true
+      },
+      {
+        "written": "p.",
+        "spoken": "pagina",
+        "beforeNumber": true
+      },
+      {
+        "written": "n.",
+        "spoken": "numero",
+        "beforeNumber": true
+      },
+      {
+        "written": "cap.",
+        "spoken": "capitolo",
+        "beforeNumber": true
+      },
+      {
+        "written": "vol.",
+        "spoken": "volume",
+        "beforeNumber": true
+      },
+      {
+        "written": "fig.",
+        "spoken": "figura",
+        "beforeNumber": true
+      },
+      {
+        "written": "ca.",
+        "spoken": "circa"
+      }
+    ]
+  },
+  "cy": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "e.e.",
+        "spoken": "er enghraifft"
+      },
+      {
+        "written": "h.y.",
+        "spoken": "hynny yw"
+      },
+      {
+        "written": "ayb.",
+        "spoken": "ac yn y blaen",
+        "canEndSentence": true
+      },
+      {
+        "written": "Dr.",
+        "spoken": "Doctor"
+      },
+      {
+        "written": "Parch.",
+        "spoken": "Parchedig"
+      },
+      {
+        "written": "tud.",
+        "spoken": "tudalen",
+        "beforeNumber": true
+      },
+      {
+        "written": "dud.",
+        "spoken": "dudalen",
+        "beforeNumber": true
+      },
+      {
+        "written": "pen.",
+        "spoken": "pennod",
+        "beforeNumber": true
+      }
+    ]
+  },
+  "de": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "Dr.",
+        "spoken": "Doktor"
+      },
+      {
+        "written": "Prof.",
+        "spoken": "Professor"
+      },
+      {
+        "written": "Hr.",
+        "spoken": "Herr"
+      },
+      {
+        "written": "Hrn.",
+        "spoken": "Herrn"
+      },
+      {
+        "written": "Fr.",
+        "spoken": "Frau"
+      },
+      {
+        "written": "St.",
+        "spoken": "Sankt"
+      },
+      {
+        "written": "z. B.",
+        "spoken": "zum Beispiel"
+      },
+      {
+        "written": "z.B.",
+        "spoken": "zum Beispiel"
+      },
+      {
+        "written": "d. h.",
+        "spoken": "das heißt"
+      },
+      {
+        "written": "d.h.",
+        "spoken": "das heißt"
+      },
+      {
+        "written": "u. a.",
+        "spoken": "unter anderem"
+      },
+      {
+        "written": "u.a.",
+        "spoken": "unter anderem"
+      },
+      {
+        "written": "bzw.",
+        "spoken": "beziehungsweise"
+      },
+      {
+        "written": "ca.",
+        "spoken": "zirka"
+      },
+      {
+        "written": "usw.",
+        "spoken": "und so weiter",
+        "canEndSentence": true
+      },
+      {
+        "written": "etc.",
+        "spoken": "etzetera",
+        "canEndSentence": true
+      },
+      {
+        "written": "vgl.",
+        "spoken": "vergleiche"
+      },
+      {
+        "written": "ggf.",
+        "spoken": "gegebenenfalls"
+      },
+      {
+        "written": "evtl.",
+        "spoken": "eventuell"
+      },
+      {
+        "written": "inkl.",
+        "spoken": "inklusive"
+      },
+      {
+        "written": "Nr.",
+        "spoken": "Nummer",
+        "beforeNumber": true
+      },
+      {
+        "written": "S.",
+        "spoken": "Seite",
+        "beforeNumber": true
+      },
+      {
+        "written": "Bd.",
+        "spoken": "Band",
+        "beforeNumber": true
+      },
+      {
+        "written": "Abb.",
+        "spoken": "Abbildung",
+        "beforeNumber": true
+      },
+      {
+        "written": "Kap.",
+        "spoken": "Kapitel",
+        "beforeNumber": true
+      },
+      {
+        "written": "Str.",
+        "spoken": "Straße",
+        "canEndSentence": true
+      },
+      {
+        "written": "Jh.",
+        "spoken": "Jahrhundert",
+        "canEndSentence": true
+      }
+    ]
+  },
+  "es": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "Sr.",
+        "spoken": "señor"
+      },
+      {
+        "written": "Sra.",
+        "spoken": "señora"
+      },
+      {
+        "written": "Srta.",
+        "spoken": "señorita"
+      },
+      {
+        "written": "Sres.",
+        "spoken": "señores"
+      },
+      {
+        "written": "Dr.",
+        "spoken": "doctor"
+      },
+      {
+        "written": "Dra.",
+        "spoken": "doctora"
+      },
+      {
+        "written": "Lic.",
+        "spoken": "licenciado"
+      },
+      {
+        "written": "Prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "Ud.",
+        "spoken": "usted"
+      },
+      {
+        "written": "Uds.",
+        "spoken": "ustedes"
+      },
+      {
+        "written": "etc.",
+        "spoken": "etcétera",
+        "canEndSentence": true
+      },
+      {
+        "written": "p. ej.",
+        "spoken": "por ejemplo"
+      },
+      {
+        "written": "pág.",
+        "spoken": "página",
+        "beforeNumber": true
+      },
+      {
+        "written": "págs.",
+        "spoken": "páginas",
+        "beforeNumber": true
+      },
+      {
+        "written": "núm.",
+        "spoken": "número",
+        "beforeNumber": true
+      },
+      {
+        "written": "cap.",
+        "spoken": "capítulo",
+        "beforeNumber": true
+      },
+      {
+        "written": "vol.",
+        "spoken": "volumen",
+        "beforeNumber": true
+      },
+      {
+        "written": "aprox.",
+        "spoken": "aproximadamente"
+      },
+      {
+        "written": "Avda.",
+        "spoken": "avenida"
+      },
+      {
+        "written": "Sto.",
+        "spoken": "santo"
+      },
+      {
+        "written": "Sta.",
+        "spoken": "santa"
+      }
+    ]
+  },
+  "fr": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "M.",
+        "spoken": "monsieur"
+      },
+      {
+        "written": "MM.",
+        "spoken": "messieurs"
+      },
+      {
+        "written": "Dr.",
+        "spoken": "docteur"
+      },
+      {
+        "written": "etc.",
+        "spoken": "etcétéra",
+        "canEndSentence": true
+      },
+      {
+        "written": "p. ex.",
+        "spoken": "par exemple"
+      },
+      {
+        "written": "c.-à-d.",
+        "spoken": "c'est-à-dire"
+      },
+      {
+        "written": "cf.",
+        "spoken": "voir"
+      },
+      {
+        "written": "p.",
+        "spoken": "page",
+        "beforeNumber": true
+      },
+      {
+        "written": "env.",
+        "spoken": "environ"
+      },
+      {
+        "written": "vol.",
+        "spoken": "volume",
+        "beforeNumber": true
+      },
+      {
+        "written": "chap.",
+        "spoken": "chapitre",
+        "beforeNumber": true
+      },
+      {
+        "written": "fig.",
+        "spoken": "figure",
+        "beforeNumber": true
+      },
+      {
+        "written": "éd.",
+        "spoken": "édition"
+      }
+    ]
+  },
+  "nl": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "dhr.",
+        "spoken": "de heer"
+      },
+      {
+        "written": "mevr.",
+        "spoken": "mevrouw"
+      },
+      {
+        "written": "mw.",
+        "spoken": "mevrouw"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doctor"
+      },
+      {
+        "written": "prof.",
+        "spoken": "professor"
+      },
+      {
+        "written": "mr.",
+        "spoken": "meester"
+      },
+      {
+        "written": "ir.",
+        "spoken": "ingenieur"
+      },
+      {
+        "written": "drs.",
+        "spoken": "doctorandus"
+      },
+      {
+        "written": "bijv.",
+        "spoken": "bijvoorbeeld"
+      },
+      {
+        "written": "d.w.z.",
+        "spoken": "dat wil zeggen"
+      },
+      {
+        "written": "o.a.",
+        "spoken": "onder andere"
+      },
+      {
+        "written": "enz.",
+        "spoken": "enzovoort",
+        "canEndSentence": true
+      },
+      {
+        "written": "etc.",
+        "spoken": "et cetera",
+        "canEndSentence": true
+      },
+      {
+        "written": "ca.",
+        "spoken": "circa"
+      },
+      {
+        "written": "nr.",
+        "spoken": "nummer",
+        "beforeNumber": true
+      },
+      {
+        "written": "blz.",
+        "spoken": "bladzijde",
+        "beforeNumber": true
+      },
+      {
+        "written": "p.",
+        "spoken": "pagina",
+        "beforeNumber": true
+      },
+      {
+        "written": "hfdst.",
+        "spoken": "hoofdstuk",
+        "beforeNumber": true
+      },
+      {
+        "written": "St.",
+        "spoken": "Sint"
+      }
+    ]
+  },
+  "pl": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "ul.",
+        "spoken": "ulica"
+      },
+      {
+        "written": "al.",
+        "spoken": "aleja"
+      },
+      {
+        "written": "pl.",
+        "spoken": "plac"
+      },
+      {
+        "written": "np.",
+        "spoken": "na przykład"
+      },
+      {
+        "written": "tzn.",
+        "spoken": "to znaczy"
+      },
+      {
+        "written": "tj.",
+        "spoken": "to jest"
+      },
+      {
+        "written": "itd.",
+        "spoken": "i tak dalej",
+        "canEndSentence": true
+      },
+      {
+        "written": "itp.",
+        "spoken": "i tym podobne",
+        "canEndSentence": true
+      },
+      {
+        "written": "m.in.",
+        "spoken": "między innymi"
+      },
+      {
+        "written": "ok.",
+        "spoken": "około"
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "inż.",
+        "spoken": "inżynier"
+      },
+      {
+        "written": "ks.",
+        "spoken": "ksiądz"
+      },
+      {
+        "written": "św.",
+        "spoken": "święty"
+      },
+      {
+        "written": "s.",
+        "spoken": "strona",
+        "beforeNumber": true
+      },
+      {
+        "written": "str.",
+        "spoken": "strona",
+        "beforeNumber": true
+      },
+      {
+        "written": "rozdz.",
+        "spoken": "rozdział",
+        "beforeNumber": true
+      },
+      {
+        "written": "godz.",
+        "spoken": "godzina",
+        "beforeNumber": true
+      },
+      {
+        "written": "r.",
+        "spoken": "roku",
+        "canEndSentence": true
+      }
+    ]
+  },
+  "pt": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "Sr.",
+        "spoken": "senhor"
+      },
+      {
+        "written": "Sra.",
+        "spoken": "senhora"
+      },
+      {
+        "written": "Srta.",
+        "spoken": "senhorita"
+      },
+      {
+        "written": "Dr.",
+        "spoken": "doutor"
+      },
+      {
+        "written": "Dra.",
+        "spoken": "doutora"
+      },
+      {
+        "written": "Prof.",
+        "spoken": "professor"
+      },
+      {
+        "written": "Profa.",
+        "spoken": "professora"
+      },
+      {
+        "written": "p. ex.",
+        "spoken": "por exemplo"
+      },
+      {
+        "written": "etc.",
+        "spoken": "etcétera",
+        "canEndSentence": true
+      },
+      {
+        "written": "pág.",
+        "spoken": "página",
+        "beforeNumber": true
+      },
+      {
+        "written": "cap.",
+        "spoken": "capítulo",
+        "beforeNumber": true
+      },
+      {
+        "written": "vol.",
+        "spoken": "volume",
+        "beforeNumber": true
+      },
+      {
+        "written": "Av.",
+        "spoken": "avenida"
+      },
+      {
+        "written": "aprox.",
+        "spoken": "aproximadamente"
+      },
+      {
+        "written": "Sto.",
+        "spoken": "santo"
+      },
+      {
+        "written": "Sta.",
+        "spoken": "santa"
+      }
+    ]
+  },
+  "ru": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "и т. д.",
+        "spoken": "и так далее",
+        "canEndSentence": true
+      },
+      {
+        "written": "и т.д.",
+        "spoken": "и так далее",
+        "canEndSentence": true
+      },
+      {
+        "written": "и т. п.",
+        "spoken": "и тому подобное",
+        "canEndSentence": true
+      },
+      {
+        "written": "и т.п.",
+        "spoken": "и тому подобное",
+        "canEndSentence": true
+      },
+      {
+        "written": "и др.",
+        "spoken": "и другие",
+        "canEndSentence": true
+      },
+      {
+        "written": "т. е.",
+        "spoken": "то есть"
+      },
+      {
+        "written": "т.е.",
+        "spoken": "то есть"
+      },
+      {
+        "written": "т. к.",
+        "spoken": "так как"
+      },
+      {
+        "written": "т. н.",
+        "spoken": "так называемый"
+      },
+      {
+        "written": "напр.",
+        "spoken": "например"
+      },
+      {
+        "written": "см.",
+        "spoken": "смотри"
+      },
+      {
+        "written": "стр.",
+        "spoken": "страница",
+        "beforeNumber": true
+      },
+      {
+        "written": "с.",
+        "spoken": "страница",
+        "beforeNumber": true
+      },
+      {
+        "written": "гл.",
+        "spoken": "глава",
+        "beforeNumber": true
+      },
+      {
+        "written": "ул.",
+        "spoken": "улица"
+      },
+      {
+        "written": "проф.",
+        "spoken": "профессор"
+      },
+      {
+        "written": "доц.",
+        "spoken": "доцент"
+      },
+      {
+        "written": "им.",
+        "spoken": "имени"
+      },
+      {
+        "written": "тыс.",
+        "spoken": "тысяч"
+      },
+      {
+        "written": "руб.",
+        "spoken": "рублей",
+        "canEndSentence": true
+      }
+    ]
+  },
+  "da": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "hr.",
+        "spoken": "herr"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "prof.",
+        "spoken": "professor"
+      },
+      {
+        "written": "f.eks.",
+        "spoken": "for eksempel"
+      },
+      {
+        "written": "f. eks.",
+        "spoken": "for eksempel"
+      },
+      {
+        "written": "bl.a.",
+        "spoken": "blandt andet"
+      },
+      {
+        "written": "dvs.",
+        "spoken": "det vil sige"
+      },
+      {
+        "written": "osv.",
+        "spoken": "og så videre",
+        "canEndSentence": true
+      },
+      {
+        "written": "ca.",
+        "spoken": "cirka"
+      },
+      {
+        "written": "nr.",
+        "spoken": "nummer",
+        "beforeNumber": true
+      },
+      {
+        "written": "s.",
+        "spoken": "side",
+        "beforeNumber": true
+      },
+      {
+        "written": "kap.",
+        "spoken": "kapitel",
+        "beforeNumber": true
+      },
+      {
+        "written": "jf.",
+        "spoken": "jævnfør"
+      },
+      {
+        "written": "pga.",
+        "spoken": "på grund af"
+      },
+      {
+        "written": "mht.",
+        "spoken": "med hensyn til"
+      },
+      {
+        "written": "evt.",
+        "spoken": "eventuelt"
+      },
+      {
+        "written": "kl.",
+        "spoken": "klokken",
+        "beforeNumber": true
+      }
+    ]
+  },
+  "fi": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "esim.",
+        "spoken": "esimerkiksi"
+      },
+      {
+        "written": "ns.",
+        "spoken": "niin sanottu"
+      },
+      {
+        "written": "ym.",
+        "spoken": "ynnä muuta",
+        "canEndSentence": true
+      },
+      {
+        "written": "yms.",
+        "spoken": "ynnä muuta sellaista",
+        "canEndSentence": true
+      },
+      {
+        "written": "jne.",
+        "spoken": "ja niin edelleen",
+        "canEndSentence": true
+      },
+      {
+        "written": "ks.",
+        "spoken": "katso"
+      },
+      {
+        "written": "n.",
+        "spoken": "noin"
+      },
+      {
+        "written": "s.",
+        "spoken": "sivu",
+        "beforeNumber": true
+      },
+      {
+        "written": "prof.",
+        "spoken": "professori"
+      },
+      {
+        "written": "mm.",
+        "spoken": "muun muassa"
+      },
+      {
+        "written": "ts.",
+        "spoken": "toisin sanoen"
+      },
+      {
+        "written": "v.",
+        "spoken": "vuonna",
+        "beforeNumber": true
+      }
+    ]
+  },
+  "is": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "t.d.",
+        "spoken": "til dæmis"
+      },
+      {
+        "written": "þ.e.",
+        "spoken": "það er"
+      },
+      {
+        "written": "o.s.frv.",
+        "spoken": "og svo framvegis",
+        "canEndSentence": true
+      },
+      {
+        "written": "u.þ.b.",
+        "spoken": "um það bil"
+      },
+      {
+        "written": "m.a.",
+        "spoken": "meðal annars"
+      },
+      {
+        "written": "sbr.",
+        "spoken": "samanber"
+      },
+      {
+        "written": "bls.",
+        "spoken": "blaðsíða",
+        "beforeNumber": true
+      },
+      {
+        "written": "nr.",
+        "spoken": "númer",
+        "beforeNumber": true
+      },
+      {
+        "written": "kl.",
+        "spoken": "klukkan",
+        "beforeNumber": true
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "próf.",
+        "spoken": "prófessor"
+      }
+    ]
+  },
+  "no": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "hr.",
+        "spoken": "herr"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "prof.",
+        "spoken": "professor"
+      },
+      {
+        "written": "f.eks.",
+        "spoken": "for eksempel"
+      },
+      {
+        "written": "bl.a.",
+        "spoken": "blant annet"
+      },
+      {
+        "written": "dvs.",
+        "spoken": "det vil si"
+      },
+      {
+        "written": "osv.",
+        "spoken": "og så videre",
+        "canEndSentence": true
+      },
+      {
+        "written": "ca.",
+        "spoken": "cirka"
+      },
+      {
+        "written": "nr.",
+        "spoken": "nummer",
+        "beforeNumber": true
+      },
+      {
+        "written": "s.",
+        "spoken": "side",
+        "beforeNumber": true
+      },
+      {
+        "written": "kap.",
+        "spoken": "kapittel",
+        "beforeNumber": true
+      },
+      {
+        "written": "jf.",
+        "spoken": "jamfør"
+      },
+      {
+        "written": "pga.",
+        "spoken": "på grunn av"
+      },
+      {
+        "written": "mht.",
+        "spoken": "med hensyn til"
+      },
+      {
+        "written": "evt.",
+        "spoken": "eventuelt"
+      },
+      {
+        "written": "kl.",
+        "spoken": "klokken",
+        "beforeNumber": true
+      }
+    ]
+  },
+  "sv": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "t.ex.",
+        "spoken": "till exempel"
+      },
+      {
+        "written": "t. ex.",
+        "spoken": "till exempel"
+      },
+      {
+        "written": "bl.a.",
+        "spoken": "bland annat"
+      },
+      {
+        "written": "dvs.",
+        "spoken": "det vill säga"
+      },
+      {
+        "written": "osv.",
+        "spoken": "och så vidare",
+        "canEndSentence": true
+      },
+      {
+        "written": "o.s.v.",
+        "spoken": "och så vidare",
+        "canEndSentence": true
+      },
+      {
+        "written": "etc.",
+        "spoken": "etcetera",
+        "canEndSentence": true
+      },
+      {
+        "written": "m.m.",
+        "spoken": "med mera",
+        "canEndSentence": true
+      },
+      {
+        "written": "ca.",
+        "spoken": "cirka"
+      },
+      {
+        "written": "nr.",
+        "spoken": "nummer",
+        "beforeNumber": true
+      },
+      {
+        "written": "s.",
+        "spoken": "sidan",
+        "beforeNumber": true
+      },
+      {
+        "written": "kap.",
+        "spoken": "kapitel",
+        "beforeNumber": true
+      },
+      {
+        "written": "jfr.",
+        "spoken": "jämför"
+      },
+      {
+        "written": "pga.",
+        "spoken": "på grund av"
+      },
+      {
+        "written": "kl.",
+        "spoken": "klockan",
+        "beforeNumber": true
+      },
+      {
+        "written": "prof.",
+        "spoken": "professor"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "f.d.",
+        "spoken": "före detta"
+      }
+    ]
+  },
+  "ca": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "Sr.",
+        "spoken": "senyor"
+      },
+      {
+        "written": "Sra.",
+        "spoken": "senyora"
+      },
+      {
+        "written": "Dr.",
+        "spoken": "doctor"
+      },
+      {
+        "written": "Dra.",
+        "spoken": "doctora"
+      },
+      {
+        "written": "p. ex.",
+        "spoken": "per exemple"
+      },
+      {
+        "written": "etc.",
+        "spoken": "etcètera",
+        "canEndSentence": true
+      },
+      {
+        "written": "pàg.",
+        "spoken": "pàgina",
+        "beforeNumber": true
+      },
+      {
+        "written": "núm.",
+        "spoken": "número",
+        "beforeNumber": true
+      },
+      {
+        "written": "cap.",
+        "spoken": "capítol",
+        "beforeNumber": true
+      },
+      {
+        "written": "aprox.",
+        "spoken": "aproximadament"
+      },
+      {
+        "written": "St.",
+        "spoken": "sant"
+      },
+      {
+        "written": "Sta.",
+        "spoken": "santa"
+      },
+      {
+        "written": "av.",
+        "spoken": "avinguda"
+      }
+    ]
+  },
+  "ro": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "dl.",
+        "spoken": "domnul"
+      },
+      {
+        "written": "dna.",
+        "spoken": "doamna"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doctor"
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "ș.a.",
+        "spoken": "și altele",
+        "canEndSentence": true
+      },
+      {
+        "written": "ș.a.m.d.",
+        "spoken": "și așa mai departe",
+        "canEndSentence": true
+      },
+      {
+        "written": "etc.",
+        "spoken": "etcetera",
+        "canEndSentence": true
+      },
+      {
+        "written": "de ex.",
+        "spoken": "de exemplu"
+      },
+      {
+        "written": "nr.",
+        "spoken": "numărul",
+        "beforeNumber": true
+      },
+      {
+        "written": "p.",
+        "spoken": "pagina",
+        "beforeNumber": true
+      },
+      {
+        "written": "pag.",
+        "spoken": "pagina",
+        "beforeNumber": true
+      },
+      {
+        "written": "cap.",
+        "spoken": "capitolul",
+        "beforeNumber": true
+      },
+      {
+        "written": "str.",
+        "spoken": "strada"
+      },
+      {
+        "written": "bd.",
+        "spoken": "bulevardul"
+      },
+      {
+        "written": "aprox.",
+        "spoken": "aproximativ"
+      },
+      {
+        "written": "sf.",
+        "spoken": "sfântul"
+      }
+    ]
+  },
+  "cs": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "např.",
+        "spoken": "například"
+      },
+      {
+        "written": "tj.",
+        "spoken": "to jest"
+      },
+      {
+        "written": "tzn.",
+        "spoken": "to znamená"
+      },
+      {
+        "written": "atd.",
+        "spoken": "a tak dále",
+        "canEndSentence": true
+      },
+      {
+        "written": "apod.",
+        "spoken": "a podobně",
+        "canEndSentence": true
+      },
+      {
+        "written": "aj.",
+        "spoken": "a jiné",
+        "canEndSentence": true
+      },
+      {
+        "written": "mj.",
+        "spoken": "mimo jiné"
+      },
+      {
+        "written": "tzv.",
+        "spoken": "takzvaný"
+      },
+      {
+        "written": "č.",
+        "spoken": "číslo",
+        "beforeNumber": true
+      },
+      {
+        "written": "s.",
+        "spoken": "strana",
+        "beforeNumber": true
+      },
+      {
+        "written": "str.",
+        "spoken": "strana",
+        "beforeNumber": true
+      },
+      {
+        "written": "kap.",
+        "spoken": "kapitola",
+        "beforeNumber": true
+      },
+      {
+        "written": "ul.",
+        "spoken": "ulice"
+      },
+      {
+        "written": "nám.",
+        "spoken": "náměstí"
+      },
+      {
+        "written": "sv.",
+        "spoken": "svatý"
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "doc.",
+        "spoken": "docent"
+      },
+      {
+        "written": "resp.",
+        "spoken": "respektive"
+      },
+      {
+        "written": "popř.",
+        "spoken": "popřípadě"
+      }
+    ]
+  },
+  "sk": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "napr.",
+        "spoken": "napríklad"
+      },
+      {
+        "written": "t. j.",
+        "spoken": "to jest"
+      },
+      {
+        "written": "tj.",
+        "spoken": "to jest"
+      },
+      {
+        "written": "tzn.",
+        "spoken": "to znamená"
+      },
+      {
+        "written": "atď.",
+        "spoken": "a tak ďalej",
+        "canEndSentence": true
+      },
+      {
+        "written": "a pod.",
+        "spoken": "a podobne",
+        "canEndSentence": true
+      },
+      {
+        "written": "tzv.",
+        "spoken": "takzvaný"
+      },
+      {
+        "written": "č.",
+        "spoken": "číslo",
+        "beforeNumber": true
+      },
+      {
+        "written": "s.",
+        "spoken": "strana",
+        "beforeNumber": true
+      },
+      {
+        "written": "str.",
+        "spoken": "strana",
+        "beforeNumber": true
+      },
+      {
+        "written": "kap.",
+        "spoken": "kapitola",
+        "beforeNumber": true
+      },
+      {
+        "written": "ul.",
+        "spoken": "ulica"
+      },
+      {
+        "written": "nám.",
+        "spoken": "námestie"
+      },
+      {
+        "written": "sv.",
+        "spoken": "svätý"
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "doc.",
+        "spoken": "docent"
+      },
+      {
+        "written": "resp.",
+        "spoken": "respektíve"
+      }
+    ]
+  },
+  "hr": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "npr.",
+        "spoken": "na primjer"
+      },
+      {
+        "written": "tj.",
+        "spoken": "to jest"
+      },
+      {
+        "written": "itd.",
+        "spoken": "i tako dalje",
+        "canEndSentence": true
+      },
+      {
+        "written": "i sl.",
+        "spoken": "i slično",
+        "canEndSentence": true
+      },
+      {
+        "written": "tzv.",
+        "spoken": "takozvani"
+      },
+      {
+        "written": "br.",
+        "spoken": "broj",
+        "beforeNumber": true
+      },
+      {
+        "written": "str.",
+        "spoken": "stranica",
+        "beforeNumber": true
+      },
+      {
+        "written": "pogl.",
+        "spoken": "poglavlje",
+        "beforeNumber": true
+      },
+      {
+        "written": "ul.",
+        "spoken": "ulica"
+      },
+      {
+        "written": "sv.",
+        "spoken": "sveti"
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "g.",
+        "spoken": "gospodin"
+      },
+      {
+        "written": "god.",
+        "spoken": "godine",
+        "canEndSentence": true
+      }
+    ]
+  },
+  "sl": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "npr.",
+        "spoken": "na primer"
+      },
+      {
+        "written": "tj.",
+        "spoken": "to je"
+      },
+      {
+        "written": "itd.",
+        "spoken": "in tako dalje",
+        "canEndSentence": true
+      },
+      {
+        "written": "ipd.",
+        "spoken": "in podobno",
+        "canEndSentence": true
+      },
+      {
+        "written": "t. i.",
+        "spoken": "tako imenovani"
+      },
+      {
+        "written": "št.",
+        "spoken": "številka",
+        "beforeNumber": true
+      },
+      {
+        "written": "str.",
+        "spoken": "stran",
+        "beforeNumber": true
+      },
+      {
+        "written": "pogl.",
+        "spoken": "poglavje",
+        "beforeNumber": true
+      },
+      {
+        "written": "ul.",
+        "spoken": "ulica"
+      },
+      {
+        "written": "sv.",
+        "spoken": "sveti"
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "g.",
+        "spoken": "gospod"
+      },
+      {
+        "written": "ga.",
+        "spoken": "gospa"
+      },
+      {
+        "written": "oz.",
+        "spoken": "oziroma"
+      },
+      {
+        "written": "l.",
+        "spoken": "leta",
+        "beforeNumber": true
+      }
+    ]
+  },
+  "hu": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "pl.",
+        "spoken": "például"
+      },
+      {
+        "written": "ill.",
+        "spoken": "illetve"
+      },
+      {
+        "written": "stb.",
+        "spoken": "és a többi",
+        "canEndSentence": true
+      },
+      {
+        "written": "kb.",
+        "spoken": "körülbelül"
+      },
+      {
+        "written": "ún.",
+        "spoken": "úgynevezett"
+      },
+      {
+        "written": "ld.",
+        "spoken": "lásd"
+      },
+      {
+        "written": "sz.",
+        "spoken": "szám",
+        "beforeNumber": true
+      },
+      {
+        "written": "old.",
+        "spoken": "oldal",
+        "canEndSentence": true
+      },
+      {
+        "written": "u.",
+        "spoken": "utca"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "ifj.",
+        "spoken": "ifjabb"
+      },
+      {
+        "written": "id.",
+        "spoken": "idősebb"
+      },
+      {
+        "written": "ford.",
+        "spoken": "fordította"
+      },
+      {
+        "written": "vö.",
+        "spoken": "vesd össze"
+      }
+    ]
+  },
+  "tr": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "vb.",
+        "spoken": "ve benzeri",
+        "canEndSentence": true
+      },
+      {
+        "written": "vs.",
+        "spoken": "vesaire",
+        "canEndSentence": true
+      },
+      {
+        "written": "örn.",
+        "spoken": "örneğin"
+      },
+      {
+        "written": "yy.",
+        "spoken": "yüzyıl",
+        "canEndSentence": true
+      },
+      {
+        "written": "Dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "Prof.",
+        "spoken": "profesör"
+      },
+      {
+        "written": "Doç.",
+        "spoken": "doçent"
+      },
+      {
+        "written": "s.",
+        "spoken": "sayfa",
+        "beforeNumber": true
+      },
+      {
+        "written": "No.",
+        "spoken": "numara",
+        "beforeNumber": true
+      },
+      {
+        "written": "Cad.",
+        "spoken": "caddesi"
+      },
+      {
+        "written": "Sok.",
+        "spoken": "sokak"
+      },
+      {
+        "written": "Mah.",
+        "spoken": "mahallesi"
+      },
+      {
+        "written": "bkz.",
+        "spoken": "bakınız"
+      },
+      {
+        "written": "Av.",
+        "spoken": "avukat"
+      },
+      {
+        "written": "Sn.",
+        "spoken": "sayın"
+      }
+    ]
+  },
+  "et": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "nt.",
+        "spoken": "näiteks"
+      },
+      {
+        "written": "s.t.",
+        "spoken": "see tähendab"
+      },
+      {
+        "written": "jne.",
+        "spoken": "ja nii edasi",
+        "canEndSentence": true
+      },
+      {
+        "written": "jm.",
+        "spoken": "ja muud",
+        "canEndSentence": true
+      },
+      {
+        "written": "vms.",
+        "spoken": "või muu seesugune",
+        "canEndSentence": true
+      },
+      {
+        "written": "u.",
+        "spoken": "umbes"
+      },
+      {
+        "written": "lk.",
+        "spoken": "lehekülg",
+        "beforeNumber": true
+      },
+      {
+        "written": "nr.",
+        "spoken": "number",
+        "beforeNumber": true
+      },
+      {
+        "written": "pt.",
+        "spoken": "peatükk",
+        "beforeNumber": true
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "prof.",
+        "spoken": "professor"
+      },
+      {
+        "written": "hr.",
+        "spoken": "härra"
+      },
+      {
+        "written": "pr.",
+        "spoken": "proua"
+      },
+      {
+        "written": "mh.",
+        "spoken": "muu hulgas"
+      },
+      {
+        "written": "vt.",
+        "spoken": "vaata"
+      }
+    ]
+  },
+  "lv": {
+    "ordinalDot": true,
+    "abbreviations": [
+      {
+        "written": "piem.",
+        "spoken": "piemēram"
+      },
+      {
+        "written": "t.i.",
+        "spoken": "tas ir"
+      },
+      {
+        "written": "utt.",
+        "spoken": "un tā tālāk",
+        "canEndSentence": true
+      },
+      {
+        "written": "u.c.",
+        "spoken": "un citi",
+        "canEndSentence": true
+      },
+      {
+        "written": "u.tml.",
+        "spoken": "un tamlīdzīgi",
+        "canEndSentence": true
+      },
+      {
+        "written": "apm.",
+        "spoken": "apmēram"
+      },
+      {
+        "written": "sk.",
+        "spoken": "skatīt"
+      },
+      {
+        "written": "lpp.",
+        "spoken": "lappuse",
+        "canEndSentence": true
+      },
+      {
+        "written": "nr.",
+        "spoken": "numurs",
+        "beforeNumber": true
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesors"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktors"
+      },
+      {
+        "written": "g.",
+        "spoken": "gadā",
+        "canEndSentence": true
+      },
+      {
+        "written": "iel.",
+        "spoken": "iela"
+      }
+    ]
+  },
+  "lt": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "pvz.",
+        "spoken": "pavyzdžiui"
+      },
+      {
+        "written": "t. y.",
+        "spoken": "tai yra"
+      },
+      {
+        "written": "ir t. t.",
+        "spoken": "ir taip toliau",
+        "canEndSentence": true
+      },
+      {
+        "written": "ir kt.",
+        "spoken": "ir kiti",
+        "canEndSentence": true
+      },
+      {
+        "written": "m.",
+        "spoken": "metais",
+        "canEndSentence": true
+      },
+      {
+        "written": "psl.",
+        "spoken": "puslapis",
+        "canEndSentence": true
+      },
+      {
+        "written": "nr.",
+        "spoken": "numeris",
+        "beforeNumber": true
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesorius"
+      },
+      {
+        "written": "dr.",
+        "spoken": "daktaras"
+      },
+      {
+        "written": "g.",
+        "spoken": "gatvė",
+        "canEndSentence": true
+      }
+    ]
+  },
+  "af": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "mnr.",
+        "spoken": "meneer"
+      },
+      {
+        "written": "mev.",
+        "spoken": "mevrou"
+      },
+      {
+        "written": "mej.",
+        "spoken": "mejuffrou"
+      },
+      {
+        "written": "dr.",
+        "spoken": "dokter"
+      },
+      {
+        "written": "prof.",
+        "spoken": "professor"
+      },
+      {
+        "written": "bv.",
+        "spoken": "byvoorbeeld"
+      },
+      {
+        "written": "d.w.s.",
+        "spoken": "dit wil sê"
+      },
+      {
+        "written": "ens.",
+        "spoken": "ensovoorts",
+        "canEndSentence": true
+      },
+      {
+        "written": "nr.",
+        "spoken": "nommer",
+        "beforeNumber": true
+      },
+      {
+        "written": "bl.",
+        "spoken": "bladsy",
+        "beforeNumber": true
+      },
+      {
+        "written": "hfst.",
+        "spoken": "hoofstuk",
+        "beforeNumber": true
+      },
+      {
+        "written": "ds.",
+        "spoken": "dominee"
+      },
+      {
+        "written": "ca.",
+        "spoken": "sirka"
+      },
+      {
+        "written": "vgl.",
+        "spoken": "vergelyk"
+      }
+    ]
+  },
+  "sq": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "p.sh.",
+        "spoken": "për shembull"
+      },
+      {
+        "written": "etj.",
+        "spoken": "e të tjera",
+        "canEndSentence": true
+      },
+      {
+        "written": "d.m.th.",
+        "spoken": "domethënë"
+      },
+      {
+        "written": "nr.",
+        "spoken": "numër",
+        "beforeNumber": true
+      },
+      {
+        "written": "f.",
+        "spoken": "faqe",
+        "beforeNumber": true
+      },
+      {
+        "written": "kap.",
+        "spoken": "kapitulli",
+        "beforeNumber": true
+      },
+      {
+        "written": "z.",
+        "spoken": "zoti"
+      },
+      {
+        "written": "znj.",
+        "spoken": "zonja"
+      },
+      {
+        "written": "prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "rr.",
+        "spoken": "rruga"
+      },
+      {
+        "written": "v.",
+        "spoken": "viti",
+        "beforeNumber": true
+      }
+    ]
+  },
+  "id": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "dll.",
+        "spoken": "dan lain-lain",
+        "canEndSentence": true
+      },
+      {
+        "written": "dsb.",
+        "spoken": "dan sebagainya",
+        "canEndSentence": true
+      },
+      {
+        "written": "dst.",
+        "spoken": "dan seterusnya",
+        "canEndSentence": true
+      },
+      {
+        "written": "mis.",
+        "spoken": "misalnya"
+      },
+      {
+        "written": "yth.",
+        "spoken": "yang terhormat"
+      },
+      {
+        "written": "Bpk.",
+        "spoken": "Bapak"
+      },
+      {
+        "written": "Sdr.",
+        "spoken": "Saudara"
+      },
+      {
+        "written": "Jl.",
+        "spoken": "Jalan"
+      },
+      {
+        "written": "No.",
+        "spoken": "nomor",
+        "beforeNumber": true
+      },
+      {
+        "written": "hlm.",
+        "spoken": "halaman",
+        "beforeNumber": true
+      },
+      {
+        "written": "Prof.",
+        "spoken": "profesor"
+      },
+      {
+        "written": "Dr.",
+        "spoken": "doktor"
+      },
+      {
+        "written": "tsb.",
+        "spoken": "tersebut"
+      },
+      {
+        "written": "s.d.",
+        "spoken": "sampai dengan"
+      }
+    ]
+  },
+  "eu": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "adib.",
+        "spoken": "adibidez"
+      },
+      {
+        "written": "etab.",
+        "spoken": "eta abar",
+        "canEndSentence": true
+      },
+      {
+        "written": "or.",
+        "spoken": "orrialdea",
+        "beforeNumber": true
+      },
+      {
+        "written": "zk.",
+        "spoken": "zenbakia",
+        "beforeNumber": true
+      }
+    ]
+  },
+  "ga": {
+    "ordinalDot": false,
+    "abbreviations": [
+      {
+        "written": "m.sh.",
+        "spoken": "mar shampla"
+      },
+      {
+        "written": "srl.",
+        "spoken": "agus araile",
+        "canEndSentence": true
+      },
+      {
+        "written": "Dr.",
+        "spoken": "Dochtúir"
+      },
+      {
+        "written": "Uimh.",
+        "spoken": "uimhir",
+        "beforeNumber": true
+      },
+      {
+        "written": "lch.",
+        "spoken": "leathanach",
+        "beforeNumber": true
+      },
+      {
+        "written": "Uas.",
+        "spoken": "Uasal"
+      }
+    ]
+  }
+}
