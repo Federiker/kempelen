@@ -1,0 +1,16 @@
+[package]
+name = "kempelen-parity"
+description = "The references recorded from manuzio's speech crate, and the checks against them"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+
+[lints]
+workspace = true

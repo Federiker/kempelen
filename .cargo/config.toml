@@ -1,0 +1,11 @@
+[env]
+# Pin ort's prebuilt ONNX Runtime to the CUDA 12 flavour that matches the GPU
+# speech runtime downloaded by mnz-tts (crates/tts/src/cuda.rs), regardless of any
+# CUDA toolkit installed on the build machine.
+ORT_CUDA_VERSION = "12"
+
+# Faster local builds (as in Jerome, docs/tooling-migration.md). Windows: rust-lld ships with the
+# Rust toolchain and links much faster than Microsoft's link.exe. Linux x86-64 already links with
+# rust-lld since Rust 1.90; macOS uses Apple's fast linker.
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe"

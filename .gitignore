@@ -1,0 +1,22 @@
+# Rust
+target/
+
+# Local editor / OS files
+.DS_Store
+Thumbs.db
+# Shared VS Code settings are tracked; anything else there stays personal.
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
+
+# Bun's packages
+node_modules/
+
+# Local captures, the reference harness, staged speech data and disposable scripts (AGENTS.md)
+/tmp/
+
+# Test coverage reports
+/coverage/
+lcov.info

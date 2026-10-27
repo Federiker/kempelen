@@ -1,0 +1,56 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.94"
+license = "Apache-2.0"
+repository = "https://github.com/Federiker/kempelen"
+# Not on crates.io: manuzio pins the repository by commit (owner, 27 October 2026).
+publish = false
+
+# The versions manuzio's speech crate was built with when kempelen was split from it
+# (docs/provenance.md): the samples depend on ONNX Runtime's build, so `ort` is pinned exactly.
+[workspace.dependencies]
+anyhow = "1.0.100"
+ash = { version = "0.38.0", default-features = false, features = ["loaded"] }
+crustytts-core = "0.4.0"
+crustytts-tokenizer = "0.4.0"
+futures-util = "0.3.31"
+# Text to phonemes (CC0, docs/jespersen.md): every language but Mandarin, which has its own front
+# end in src/phonemes/chinese. Pinned to a commit; bump `rev` to take a newer jespersen.
+jespersen = { git = "https://github.com/Federiker/jespersen", rev = "a88d71d29f578083cd01362d3e3394407f29a3b7", default-features = false, features = ["af", "ak", "ca", "cs", "cy", "da", "de", "ee", "el", "en", "es", "et", "eu", "fi", "fr", "ga", "ha", "hr", "hu", "id", "ig", "is", "it", "lg", "ln", "lt", "lv", "mk", "ms", "nb", "nl", "om", "pl", "pt", "rn", "ro", "ru", "rw", "sk", "sl", "sn", "so", "sq", "sr", "sv", "sw", "tr", "yo"] }
+jieba-rs = "0.11"
+kempelen = { path = "crates/kempelen" }
+kempelen-parity = { path = "crates/parity" }
+log = "0.4"
+lzma-rust2 = { version = "0.15", default-features = false, features = ["std", "optimization"] }
+ndarray = { version = "0.17.2" }
+nvml-wrapper = "0.13.0"
+ort = { version = "=2.0.0-rc.12", features = [] }
+regex = "1.12.2"
+reqwest = { version = "0.13.1", features = ["stream"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.146"
+sha2 = "0.10.9"
+thiserror = "2.0.18"
+tokio = { version = "1.49.0", features = ["macros", "rt", "rt-multi-thread"] }
+zip = { version = "7.2.0", default-features = false, features = ["deflate"] }
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+# Panics outside tests are explicit (`#[expect(..., reason = ...)]`); tests may unwrap (clippy.toml).
+unwrap_used = "warn"
+expect_used = "warn"
+
+# Less debug info in dev builds and tests: line tables for our crates (enough for backtraces), none
+# for dependencies, which are optimised (Kokoro and jespersen are slow unoptimised).
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+opt-level = 3
+debug = false

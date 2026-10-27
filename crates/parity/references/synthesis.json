@@ -1,0 +1,655 @@
+{
+  "source": {
+    "program": "manuzio 0ec8e8e (mnz-tts)",
+    "date": "2026-10-27"
+  },
+  "machine": {
+    "os": "windows",
+    "arch": "x86_64",
+    "threads": 16
+  },
+  "cases": [
+    {
+      "name": "heart_whole",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "f96ebb673a14e803abbdb7b1c76abb01b7aed8d42025c0c0bf501f63a6cdc2b0"
+      }
+    },
+    {
+      "name": "heart_streamed",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "streamed",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "f96ebb673a14e803abbdb7b1c76abb01b7aed8d42025c0c0bf501f63a6cdc2b0",
+        "count": 224400,
+        "reports": [
+          [
+            0,
+            151
+          ]
+        ]
+      }
+    },
+    {
+      "name": "heart_wav",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "wav",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "02b7b7fff637be8879e6b318cc661428a38be5afe8f88e1e03fd65f161d39131"
+      }
+    },
+    {
+      "name": "heart_chunks",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "chunks",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "059740d3d1e1f1f2a83fa33bac5d08f92f1f33e3db9bb88312c33218bf57e93d",
+        "chunks": [
+          {
+            "samples": 224400,
+            "sha256": "059740d3d1e1f1f2a83fa33bac5d08f92f1f33e3db9bb88312c33218bf57e93d"
+          }
+        ]
+      }
+    },
+    {
+      "name": "heart_none_whole",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "none",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "059740d3d1e1f1f2a83fa33bac5d08f92f1f33e3db9bb88312c33218bf57e93d"
+      }
+    },
+    {
+      "name": "heart_none_streamed",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "none",
+      "output": "streamed",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "059740d3d1e1f1f2a83fa33bac5d08f92f1f33e3db9bb88312c33218bf57e93d",
+        "count": 224400,
+        "reports": [
+          [
+            0,
+            151
+          ]
+        ]
+      }
+    },
+    {
+      "name": "heart_retail_whole",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "retail",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "ffbe52559151e6d58815645ce06baa5796587f6cd7bec992d988f8c0b5ac3e7d"
+      }
+    },
+    {
+      "name": "heart_retail_streamed",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "retail",
+      "output": "streamed",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "ffbe52559151e6d58815645ce06baa5796587f6cd7bec992d988f8c0b5ac3e7d",
+        "count": 224400,
+        "reports": [
+          [
+            0,
+            151
+          ]
+        ]
+      }
+    },
+    {
+      "name": "heart_retail_wav",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "retail",
+      "output": "wav",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 224400,
+        "sha256": "e7a48c1c3a40c5f215ffda45f0fa495ae8e19f0b8d5ab0b63a4a9d7fec9bb2de"
+      }
+    },
+    {
+      "name": "heart_emoji",
+      "voice": "af_heart",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "Hello 🙂 world, ☃ again.",
+      "expected": {
+        "samples": 45000,
+        "sha256": "3409310defda2116f72df3ed7109f14c9ac75b6549139a265924517a0c8fc774"
+      }
+    },
+    {
+      "name": "heart_reads_chinese",
+      "voice": "af_heart",
+      "language": "zh",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "你好，世界！今天天气很好，我们一起去公园散步吧。我喜欢读Harry Potter。2024年5月12日，他的身高是1.75米。",
+      "expected": {
+        "samples": 260400,
+        "sha256": "9b93201929fb7b0edc2397729d2c9b6c383b878e283c477c8aac0c33a3901206"
+      }
+    },
+    {
+      "name": "emma_abbreviations",
+      "voice": "bf_emma",
+      "language": "en",
+      "speed": 0.9,
+      "loudness": "default",
+      "output": "whole",
+      "text": "Dr. Smith met Mr. L. Frank Baum at No. 5 Baker St. on 12 May 1900; it was 10:30, e.g. late. Was it? Yes: “quite” (very) late… etc.",
+      "expected": {
+        "samples": 302400,
+        "sha256": "cb41341db7c912dd6fa4dc081b4adc562998b05924ec3e08baa312d861c71c13"
+      }
+    },
+    {
+      "name": "emma_reads_greek",
+      "voice": "bf_emma",
+      "language": "el",
+      "speed": 0.9,
+      "loudness": "default",
+      "output": "whole",
+      "text": "Ο γέρος φαροφύλακας ανέβαινε τη σκάλα, όπως κάθε βράδυ.",
+      "expected": {
+        "samples": 118800,
+        "sha256": "90203c4a4a275622e246a4e94c4114ef976aabffcba3a87dc240db98856a2a20"
+      }
+    },
+    {
+      "name": "alice_wav_09",
+      "voice": "bf_alice",
+      "language": null,
+      "speed": 0.9,
+      "loudness": "default",
+      "output": "wav",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 228000,
+        "sha256": "ed2ca7984e16b78094176086734506d401d8eb7d65209b4fee409b539ab0b371"
+      }
+    },
+    {
+      "name": "adam_slow",
+      "voice": "am_adam",
+      "language": null,
+      "speed": 0.7,
+      "loudness": "default",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 310800,
+        "sha256": "0a9216587a2eed0680809123474aaf3580c63d5e7e365d7b6d53cb547c801b8e"
+      }
+    },
+    {
+      "name": "adam_fast",
+      "voice": "am_adam",
+      "language": null,
+      "speed": 1.3,
+      "loudness": "default",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 181800,
+        "sha256": "57aec6f03e75e6cd081c280f83424df1864bbeaeada40372bae0939ba3be4506"
+      }
+    },
+    {
+      "name": "alloy_plain",
+      "voice": "af_alloy",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "One two three four five",
+      "expected": {
+        "samples": 64200,
+        "sha256": "54ae7508d617310673233877720259143cccd84834321682bada270ddfeec842"
+      }
+    },
+    {
+      "name": "alloy_punctuated",
+      "voice": "af_alloy",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "One. Two. Three. Four. Five.",
+      "expected": {
+        "samples": 67200,
+        "sha256": "cebd7debf056bd6ad4ea2defb51f2fbb08e5167bb8e77337b96b49504c0cb3c7"
+      }
+    },
+    {
+      "name": "alloy_long_whole",
+      "voice": "af_alloy",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. ",
+      "expected": {
+        "samples": 1670400,
+        "sha256": "8a8bbee642d0b430b5956fd5997c0c30593f643ecb787d8535545cacd41ae8b9"
+      }
+    },
+    {
+      "name": "alloy_long_streamed",
+      "voice": "af_alloy",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "streamed",
+      "text": "The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. ",
+      "expected": {
+        "samples": 1670400,
+        "sha256": "8a8bbee642d0b430b5956fd5997c0c30593f643ecb787d8535545cacd41ae8b9",
+        "count": 1670400,
+        "reports": [
+          [
+            0,
+            1476
+          ],
+          [
+            369,
+            1476
+          ],
+          [
+            738,
+            1476
+          ],
+          [
+            1107,
+            1476
+          ]
+        ]
+      }
+    },
+    {
+      "name": "alloy_long_retail_wav",
+      "voice": "af_alloy",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "retail",
+      "output": "wav",
+      "text": "The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. The quick brown fox jumps over the lazy dog, and then it rests. ",
+      "expected": {
+        "samples": 1670400,
+        "sha256": "5317681e78e39a35b09c142b174178f6eb81c3d8b059a9b126404a3628376424"
+      }
+    },
+    {
+      "name": "nova_quiet",
+      "voice": "af_nova",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 207600,
+        "sha256": "6ec3a3bd15fa616ba6f53f50dae8d1ebee582db36bfa66b633938c301130b55c"
+      }
+    },
+    {
+      "name": "nova_quiet_none",
+      "voice": "af_nova",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "none",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 207600,
+        "sha256": "f51faa992373dec72e5f5d593a2cccaa110057f92dc1e984cafef9055ccdd0b3"
+      }
+    },
+    {
+      "name": "sara_italian_streamed",
+      "voice": "if_sara",
+      "language": "it",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "streamed",
+      "text": "Il vecchio guardiano del faro saliva le scale, come ogni sera, contando ogni gradino sottovoce. In cima, il vento tirava il suo cappotto, e il mare era un campo di vetro grigio.\nPoi, quando la luce si accese, guardò lontano, verso le navi che tornavano al porto, e sorrise.",
+      "expected": {
+        "samples": 395400,
+        "sha256": "e0083a643d1da0c31dcb0d0fceb1fbcfe62d9e7febb5f1523f14854d06f22c62",
+        "count": 395400,
+        "reports": [
+          [
+            0,
+            307
+          ],
+          [
+            200,
+            307
+          ]
+        ]
+      }
+    },
+    {
+      "name": "sara_italian_none_streamed",
+      "voice": "if_sara",
+      "language": "it",
+      "speed": 1.0,
+      "loudness": "none",
+      "output": "streamed",
+      "text": "Il vecchio guardiano del faro saliva le scale, come ogni sera, contando ogni gradino sottovoce. In cima, il vento tirava il suo cappotto, e il mare era un campo di vetro grigio.\nPoi, quando la luce si accese, guardò lontano, verso le navi che tornavano al porto, e sorrise.",
+      "expected": {
+        "samples": 395400,
+        "sha256": "dfe52d3676fc99f784854e0e4a9aecb3b89a739ab15f8b9342e099a75d005d9e",
+        "count": 395400,
+        "reports": [
+          [
+            0,
+            307
+          ],
+          [
+            200,
+            307
+          ]
+        ]
+      }
+    },
+    {
+      "name": "sara_italian_whole",
+      "voice": "if_sara",
+      "language": "it",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "Il vecchio guardiano del faro saliva le scale, come ogni sera, contando ogni gradino sottovoce. In cima, il vento tirava il suo cappotto, e il mare era un campo di vetro grigio.\nPoi, quando la luce si accese, guardò lontano, verso le navi che tornavano al porto, e sorrise.",
+      "expected": {
+        "samples": 395400,
+        "sha256": "e0083a643d1da0c31dcb0d0fceb1fbcfe62d9e7febb5f1523f14854d06f22c62"
+      }
+    },
+    {
+      "name": "sara_italian_chunks",
+      "voice": "if_sara",
+      "language": "it",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "chunks",
+      "text": "Il vecchio guardiano del faro saliva le scale, come ogni sera, contando ogni gradino sottovoce. In cima, il vento tirava il suo cappotto, e il mare era un campo di vetro grigio.\nPoi, quando la luce si accese, guardò lontano, verso le navi che tornavano al porto, e sorrise.",
+      "expected": {
+        "samples": 395400,
+        "sha256": "5a95965b3f08a2ae469ff096776714ff913f761174c869917c30f580ac4cd1d1",
+        "chunks": [
+          {
+            "samples": 253800,
+            "sha256": "808dee4835a148f50a6fc48461e45d583fb82145f1818a83350851433e4fc9ce"
+          },
+          {
+            "samples": 141600,
+            "sha256": "90805c464e7d6fc610e59b6db98de41f67f16d9f36a5b3979d98d4a3b5b498fa"
+          }
+        ]
+      }
+    },
+    {
+      "name": "sara_reads_german",
+      "voice": "if_sara",
+      "language": "de",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "Dr. Müller kam am 3. Mai um 10 Uhr, z. B. mit Herrn Schmidt. Der alte Leuchtturmwärter stieg die Treppe hinauf.",
+      "expected": {
+        "samples": 173400,
+        "sha256": "579c8afa850898112842e77d80a6ba04fa214dbff06a62ea29ee130cbfd0dfea"
+      }
+    },
+    {
+      "name": "sara_reads_german_text_as_italian",
+      "voice": "if_sara",
+      "language": "it",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "Dr. Müller kam am 3. Mai um 10 Uhr, z. B. mit Herrn Schmidt. Der alte Leuchtturmwärter stieg die Treppe hinauf.",
+      "expected": {
+        "samples": 155400,
+        "sha256": "49f99a9babba9d629eed6d1e647fddd9d6ac794f3b40210012bb28ded9b95b10"
+      }
+    },
+    {
+      "name": "siwis_french",
+      "voice": "ff_siwis",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "Le vieux gardien du phare montait l’escalier, comme chaque soir. En haut, le vent tirait sur son manteau.",
+      "expected": {
+        "samples": 144600,
+        "sha256": "0e52f7aa3cd46bbab97cbdbbf55cd3acd2d6cfed727219b760630ab486ab8dbf"
+      }
+    },
+    {
+      "name": "alex_spanish",
+      "voice": "em_alex",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "El viejo farero subía la escalera, como cada noche. Arriba, el viento le tiraba del abrigo.",
+      "expected": {
+        "samples": 133200,
+        "sha256": "92a6138a6c71f7a26df63827e651e3f6f79376c7f9e39af897fe6cb82bcfe194"
+      }
+    },
+    {
+      "name": "dora_spanish_retail",
+      "voice": "ef_dora",
+      "language": "es",
+      "speed": 0.9,
+      "loudness": "retail",
+      "output": "whole",
+      "text": "El viejo farero subía la escalera, como cada noche. Arriba, el viento le tiraba del abrigo.",
+      "expected": {
+        "samples": 144000,
+        "sha256": "f162723c972dbfb281bc910d9427d3831169bfd2bca60a12aa4a6f7946438486"
+      }
+    },
+    {
+      "name": "pm_alex_portuguese",
+      "voice": "pm_alex",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "O velho faroleiro subia a escada, como todas as noites. No topo, o vento puxava o seu casaco.",
+      "expected": {
+        "samples": 148200,
+        "sha256": "b2fca783e7dcc3f905498408168b06388d63f0a00114a8368cdd03b4a7f77cd4"
+      }
+    },
+    {
+      "name": "michael_reads_russian",
+      "voice": "am_michael",
+      "language": "ru",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "streamed",
+      "text": "Старый смотритель маяка поднимался по лестнице, как каждый вечер. Привет, John Smith!",
+      "expected": {
+        "samples": 193200,
+        "sha256": "8cca86306bd6bcb82a84df2de373340437b2feb48577c4d48145340387a7aa60",
+        "count": 193200,
+        "reports": [
+          [
+            0,
+            110
+          ]
+        ]
+      }
+    },
+    {
+      "name": "george_reads_serbian_latin",
+      "voice": "bm_george",
+      "language": "sr-Latn",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "Stari svetioničar se penjao uz stepenice, kao svake večeri.",
+      "expected": {
+        "samples": 127200,
+        "sha256": "d4cac937f0a6758a324399df172506f1b299e8a40875aa4e2d044602468dfe7e"
+      }
+    },
+    {
+      "name": "xiaoxiao_chinese",
+      "voice": "zf_xiaoxiao",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "你好，世界！今天天气很好，我们一起去公园散步吧。我喜欢读Harry Potter。2024年5月12日，他的身高是1.75米。",
+      "expected": {
+        "samples": 243600,
+        "sha256": "2f1ad37210e8594831c83ead8dc17dc0c389acf1b2e8e2c6c2bb8121a488e5cd"
+      }
+    },
+    {
+      "name": "yunxi_chinese_streamed",
+      "voice": "zm_yunxi",
+      "language": "zh",
+      "speed": 0.9,
+      "loudness": "default",
+      "output": "streamed",
+      "text": "你好，世界！今天天气很好，我们一起去公园散步吧。我喜欢读Harry Potter。2024年5月12日，他的身高是1.75米。",
+      "expected": {
+        "samples": 240600,
+        "sha256": "9fcf8e4df67e4581956c2e29fc5411ff9243a3c8b304b19d65a7e38436a983a5",
+        "count": 240600,
+        "reports": [
+          [
+            0,
+            190
+          ]
+        ]
+      }
+    },
+    {
+      "name": "xiaoxiao_reads_english",
+      "voice": "zf_xiaoxiao",
+      "language": "en",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 201600,
+        "sha256": "6f7bd676606316803e248438184358b0c176e4d6d868300071ee1504b41f9742"
+      }
+    },
+    {
+      "name": "fails_without_speech",
+      "voice": "af_alloy",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "  \n ",
+      "expected": {
+        "samples": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "failed": true
+      }
+    },
+    {
+      "name": "fails_without_speech_streamed",
+      "voice": "af_alloy",
+      "language": null,
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "streamed",
+      "text": "  \n ",
+      "expected": {
+        "samples": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "failed": true
+      }
+    },
+    {
+      "name": "fails_for_japanese",
+      "voice": "af_alloy",
+      "language": "ja",
+      "speed": 1.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "failed": true
+      }
+    },
+    {
+      "name": "fails_at_speed_zero",
+      "voice": "af_alloy",
+      "language": null,
+      "speed": 0.0,
+      "loudness": "default",
+      "output": "whole",
+      "text": "The old lighthouse keeper climbed the stairs, as he did every evening, counting each step under his breath. At the top, the wind pulled at his coat!",
+      "expected": {
+        "samples": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "failed": true
+      }
+    }
+  ]
+}
