@@ -30,10 +30,11 @@ Most items came from manuzio's TODO (P1, narration) when kempelen was split out 
 
 ## Pronunciation: jespersen ([docs/jespersen.md](docs/jespersen.md))
 
-- [ ] Take jespersen's Italian fixes of 27 October 2026 (its commit `f36efe6`: long ʎ between vowels,
-      a voiceless s in stasera, girasole, ventisei…) once the owner tags them (v0.1.1): bump `tag`,
-      then update the changed phoneme references ([docs/parity.md](docs/parity.md)); meglio reaches
-      Kokoro as `mˈɛlʲːo`, the owner's choice, instead of today's short `mˈɛlʲo`
+- [ ] Take jespersen's Italian fixes of 27 October 2026 (its commits `f36efe6` and `726c2f7`: a long
+      ʎ after the stressed vowel, a voiceless s in stasera, girasole, ventisei…) once the owner tags
+      them (v0.1.1): bump `tag`, then update the changed phoneme references and list them in
+      [docs/parity.md](docs/parity.md). Only then does meglio reach Kokoro as `mˈɛlʲːo`, the owner's
+      choice (`kokoro_sounds`); today it is still `mˈɛʎo`
 
 - [ ] Ask jespersen whether single letters should be letter names: they are read as sounds in Italian
       (`x y z` → `ks ˈi dz`), where eSpeak NG says the names
@@ -80,6 +81,6 @@ with the `audio_check` example.
 - [ ] Mandarin: `zf_xiaobei` and `zm_yunjian` samples, against narration made before the new reader
 - [ ] The shipped reading rules' abbreviations, English spoken forms included ("St." is always
       "Saint", "Dr." always "Doctor"), and `ordinalDot` for Basque and Lithuanian (both off)
-- [ ] Italian ʎ as `lʲ` (docs/jespersen.md, "Fitting to Kokoro"): chosen on "meglio"; listen to a short
-      one too ("gli" at a sentence's start, "sbagliato" once long), and whether Catalan and Portuguese ʎ
-      (lh) sound wrong the same way
+- [ ] Italian ʎ (docs/jespersen.md, "Fitting to Kokoro"): long `lʲː` chosen on "meglio", short ʎ on
+      "sbagliavo"; listen to "gli" at a sentence's start, and whether Catalan and Portuguese ʎ (lh)
+      sound wrong the same way

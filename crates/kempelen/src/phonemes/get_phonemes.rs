@@ -124,14 +124,15 @@ fn fit_to_kokoro(phonemes: &str, code: &str, tokenizer: &KokoroTokenizer) -> Str
 /// `phonemes` with the sounds Kokoro says badly in the reading code `code` respelt as it says them
 /// well, judged by ear by the owner.
 ///
-/// Italian's ʎ (gli, meglio) comes out wrong from Kokoro's Italian voices, closer to an l or a j:
-/// a palatalised l is right, long where jespersen writes ʎ long, between vowels (meglio mˈɛlʲːo;
-/// owner, 27 October 2026, against ʎ, ʎʎ, ʎː, lj and its long forms).
+/// Italian's long ʎ, which jespersen writes ʎʎ after the stressed vowel (meglio mˈɛʎʎo), comes out
+/// wrong from Kokoro's Italian voices, closer to an l or a j: a long palatalised l is right
+/// (mˈɛlʲːo). A short ʎ, before the stress or alone (sbagliavo zbaʎˈavo, gli), is right as it is.
+/// Owner, by ear, 27 October 2026, against ʎʎ, ʎː, lj, llj, lːj, ʎj, lʲ and li, and for the short
+/// one against lʲ, lʲː, lʲlʲ and lʲj.
 fn kokoro_sounds<'a>(phonemes: &'a str, code: &str) -> std::borrow::Cow<'a, str> {
-    if code == "it" && phonemes.contains('\u{028E}') {
+    if code == "it" && phonemes.contains("\u{028E}\u{028E}") {
         phonemes
             .replace("\u{028E}\u{028E}", "l\u{02B2}\u{02D0}")
-            .replace('\u{028E}', "l\u{02B2}")
             .into()
     } else {
         phonemes.into()

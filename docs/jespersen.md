@@ -50,9 +50,10 @@ Kokoro silently drops the letter and its sound. `every_letter_jespersen_writes_r
 any letter in the corpus (and a line in each language the corpus lacks) would still be dropped.
 
 A sound Kokoro has but says badly in one language is respelt for that language only (`kokoro_sounds`):
-Italian ʎ (gli, meglio) becomes a palatalised l, `lʲ`, and `lʲː` where jespersen writes it long
-(`ʎʎ`, between vowels), as the owner chose by ear on 27 October 2026 against ʎ, ʎʎ, ʎː and lj. Other
-languages keep ʎ until someone listens to them.
+Italian's long ʎ, which jespersen writes `ʎʎ` after the stressed vowel (meglio, famiglia), becomes a
+long palatalised l, `lʲː`; a short ʎ, before the stress or alone (sbagliavo, gli), stays as it is.
+The owner chose both by ear on 27 October 2026 (against ʎʎ, ʎː, lj and others for the long one, and
+lʲ, lʲː, lʲlʲ and lʲj for the short one). Other languages keep ʎ until someone listens to them.
 
 eSpeak NG's own notation writes Danish short e as the Greek ε (`fem` → `fˈεm`), and jespersen copies it
 on purpose; owner, 24 October 2026: jespersen stays faithful and the caller maps it. To ask jespersen:
