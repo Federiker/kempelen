@@ -63,6 +63,7 @@ listed here, and the rest of the references stay as recorded:
 | When | What | Lines | Why |
 | --- | --- | --- | --- |
 | 27 October 2026 | jespersen `a88d71d` → v0.1.0 (`23a215b`) | 2 Italian lines: the verb "è" becomes `ˈɛ` instead of `e` ("la cioccolata è meglio", "la città è così silenziosa") | jespersen's fix `e9c91a3` stresses it, as Italian says it; owner, 27 October 2026: keep the correct reading. None of the 42 syntheses has an "è", so the samples are unchanged |
+| 27 October 2026 | jespersen v0.1.0 → v0.1.2 (`f9220e4`) | 2 Italian lines: meglio's ʎ long (raw `mˈɛʎʎo`; to Kokoro `mˈɛlʲːo`, `kokoro_sounds`), stasera's s voiceless (`stasˈera`, not `stazˈera`) | jespersen's fixes `f36efe6` and `726c2f7` and kempelen's `da843b1`, all from the owner's listening checks of that day. No synthesis has an Italian ʎ or a stasera |
 
 manuzio's adapters give the new readings once manuzio narrates through kempelen, so its check after
 switching uses these references too. melies's references hold no "è" and stay as they are.

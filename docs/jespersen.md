@@ -8,12 +8,13 @@ committed here.
 
 ## How kempelen uses it
 
-- **Dependency.** `jespersen` is a git dependency pinned to a release tag (`tag = "v0.1.0"` in the
-  root `Cargo.toml`, commit `23a215b`; `Cargo.lock` records the commit), with every language feature
-  but `zh`, as manuzio had it. manuzio pinned `a88d71d`, three commits earlier: v0.1.0 stresses the
-  Italian verb "è", the one change in the references ([parity.md](parity.md)). Its data is compiled
-  in; there is no helper process, no staging and nothing to download. `cargo deny` allows its git
-  source.
+- **Dependency.** `jespersen` is a git dependency pinned to a release tag (`tag = "v0.1.2"` in the
+  root `Cargo.toml`, commit `f9220e4`; `Cargo.lock` records the commit), with every language feature
+  but `zh`, as manuzio had it. manuzio pinned `a88d71d`; since then jespersen stresses the Italian
+  verb "è" (v0.1.0), writes ʎ long after the stressed vowel and keeps a compound's s voiceless
+  (stasera; v0.1.2, from kempelen's listening checks): the only changes in the references
+  ([parity.md](parity.md)). Its data is compiled in; there is no helper process, no staging and
+  nothing to download. `cargo deny` allows its git source.
 - **The seam.** `JespersenPhonemizer` (`crates/kempelen/src/phonemes/jespersen.rs`) implements the
   `Phonemizer` trait. The pipeline around it is kempelen's: text normalisation, the reading rules
   (abbreviations, ordinal full stops, initials: `phonemes/reading.rs`, with the rules shipped in
@@ -95,10 +96,11 @@ before the split: `crates/parity/references/phonemes.json` ([parity.md](parity.m
 ### Parity tracker
 
 jespersen against the upstream eSpeak NG reference: exact lines and matched words, in %. Measured on
-commit `a88d71d` in manuzio, 24 October 2026, and again here on v0.1.0, 27 October 2026: only Italian
-changed (lines 9.5 → 4.8, words 59.1 → 58.1; all languages 14.6 → 14.4 and 56.8), because eSpeak NG
-leaves the verb "è" unstressed and jespersen now stresses it. The floors in `tests/it/golden.rs` sit
-about two points under the words.
+commit `a88d71d` in manuzio, 24 October 2026, and again here on v0.1.2, 27 October 2026: only Italian
+changed (lines 9.5 → 4.8, words 59.1 → 57.6; all languages 14.6 → 14.4 and 56.8), because eSpeak NG
+leaves the verb "è" unstressed, writes one ʎ in meglio and voices the s of stasera, where jespersen
+now does what Italian does. The floors in `tests/it/golden.rs` sit about two points under the words
+(Italian's, 57, now less than one).
 
 | Code | Lines | Words | Code | Lines | Words | Code | Lines | Words |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -109,7 +111,7 @@ about two points under the words.
 | cs | 23.8 | 62.5 | hu | 9.5 | 60.0 | ru | 4.8 | 35.5 |
 | cy | 23.8 | 63.6 | id | 23.8 | 58.7 | sk | 14.3 | 59.3 |
 | da | 9.5 | 34.9 | is | 14.3 | 57.1 | sl | 23.8 | 60.9 |
-| de | 9.5 | 62.7 | it | 4.8 | 58.1 | sq | 9.5 | 59.8 |
+| de | 9.5 | 62.7 | it | 4.8 | 57.6 | sq | 9.5 | 59.8 |
 | es | 33.3 | 67.6 | lt | 9.5 | 53.2 | sv | 9.5 | 57.4 |
 | et | 19.0 | 49.5 | lv | 4.8 | 60.6 | tr | 4.8 | 34.3 |
 | eu | 14.3 | 60.4 | nl | 14.3 | 57.6 | **all** | 14.4 | 56.8 |
