@@ -1,0 +1,34 @@
+# Normalise text in Git and use LF on every platform, independent of core.autocrlf.
+* text=auto eol=lf
+
+# Windows command scripts require CRLF; PowerShell and shell scripts use LF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=lf
+*.sh text eol=lf
+
+# Language data and references are kept as reviewable text.
+*.md text diff
+*.json text
+*.toml text
+*.tsv text
+*.txt text
+*.yml text
+*.lock text
+
+# The pinned speech manifest stays byte for byte as recorded (its SHA-256s name the files).
+crates/kempelen/assets/speech-assets.json text eol=lf
+
+# Models, voices, archives and audio are never converted, and never committed (AGENTS.md); the rule
+# keeps a fixture safe if one is ever added. (No Git LFS: add it before the first large binary.)
+*.onnx binary
+*.bin binary
+*.raw binary
+*.wav binary
+*.flac binary
+*.mp3 binary
+*.zip binary
+*.gz binary
+*.xz binary
+*.lzma2 binary
+*.whl binary

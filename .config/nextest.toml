@@ -1,0 +1,24 @@
+# cargo-nextest settings (`mise run test` locally, `--profile ci` in CI, `--profile model` for the
+# model tier).
+
+[profile.default]
+slow-timeout = { period = "30s" }
+
+[profile.ci]
+# In CI only: retry a failing test once, so a rare timing failure is reported as flaky rather
+# than failing the run; keep going after a failure; write JUnit results for the run's artefacts.
+retries = 1
+fail-fast = false
+
+[profile.ci.junit]
+path = "junit.xml"
+
+[profile.model]
+# The model tier runs Kokoro on the CPU: a test can take minutes (every voice, long texts), and
+# every test already uses every core, so they run one at a time.
+slow-timeout = { period = "120s", terminate-after = 10 }
+test-threads = 1
+fail-fast = false
+
+[profile.model.junit]
+path = "junit.xml"

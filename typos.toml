@@ -1,0 +1,63 @@
+# typos checks spelling in code and docs, in UK English. Every allowed word below says why it is
+# allowed.
+
+[default]
+locale = "en-gb"
+# Other software's names, matched in context so the same word in prose is still checked: tokio's
+# runtime flavor.
+extend-ignore-re = ['flavor = "']
+
+[files]
+extend-exclude = [
+  "*.lock",
+  "bun.lock",
+  # The Apache licence, as the Apache Software Foundation publishes it, and the notices of others.
+  "LICENSE",
+  "NOTICE",
+  "crates/kempelen/assets/",
+  # Language data and recorded output: the Mandarin tables, the golden corpora and the parity
+  # references (other languages' words, as written).
+  "crates/kempelen/mandarin/",
+  "**/golden/",
+  "crates/parity/references/",
+  # The reading rules of every language: abbreviations as each language writes them.
+  "crates/kempelen/data/",
+  # The benchmark's text as the audiobook reads it: hyphenated with soft hyphens.
+  "crates/kempelen/examples/bench/",
+]
+
+[default.extend-words]
+# Names other software fixes: serde's Serialize and Deserialize, sha2's `finalize`, String.normalize
+# and Unicode normalisation, and Kokoro's own "synthesize" in the copied API (Synthesizer and its
+# `synthesize*` methods keep the names manuzio calls; UK prose elsewhere).
+serialize = "serialize"
+serialized = "serialized"
+serializes = "serializes"
+serializing = "serializing"
+serialization = "serialization"
+finalize = "finalize"
+normalize = "normalize"
+normalized = "normalized"
+normalizes = "normalizes"
+normalization = "normalization"
+synthesize = "synthesize"
+synthesizes = "synthesizes"
+synthesized = "synthesized"
+synthesizing = "synthesizing"
+synthesizer = "synthesizer"
+initialize = "initialize"
+initializes = "initializes"
+initialized = "initialized"
+# The audio check example's `analyze` function (from manuzio; rename it to UK spelling when its code
+# is next touched, then remove this).
+analyze = "analyze"
+# Other languages and quoted texts in tests and examples: Spanish `cristal`, French `sur`, Italian
+# `histori` and `forse`, Lingala `ebale` (river), the US English of The Wizard of Oz (`plowed`),
+# and `mis-measurement` in the loudness code.
+cristal = "cristal"
+sur = "sur"
+histori = "histori"
+forse = "forse"
+ebale = "ebale"
+plowed = "plowed"
+mis = "mis"

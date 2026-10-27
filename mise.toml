@@ -1,0 +1,131 @@
+# Developer tools, pinned (the same versions as jespersen's and jerome's). `mise install` installs
+# them; scripts/install.bat and scripts/install.sh set up a whole machine.
+# Rust itself is pinned in rust-toolchain.toml and installed by rustup.
+min_version = "2026.10.0"
+
+[settings]
+# mise.lock records each tool's exact version and checksums.
+lockfile = true
+
+[env]
+# The packages' programs (biome, tsc) run without `bun x`.
+_.path = ["{{config_root}}/node_modules/.bin"]
+# The staged Kokoro model and voices the model tier, the examples and the parity test read
+# (`mise run speech` stages them here). The library never reads it: tests and examples pass it on.
+# Point it at another folder in mise.local.toml (gitignored), e.g. an app's staged copy.
+KEMPELEN_DATA_DIR = "{{ get_env(name='KEMPELEN_DATA_DIR', default=config_root ~ '/tmp/speech') }}"
+
+[tools]
+bun = "1.4.2"
+# Lets the `cargo:` tools below install prebuilt binaries instead of compiling.
+cargo-binstall = "1.26.0"
+"cargo:cargo-nextest" = "0.9.149"
+"cargo:cargo-machete" = "0.9.2"
+"cargo:cargo-llvm-cov" = "0.9.1"
+cargo-deny = "0.20.2"
+typos = "1.51.1"
+lychee = "0.24.2"
+lefthook = "2.2.2"
+
+# The repository's commands: `mise run <task>` (`mise tasks` lists them). Arguments after the
+# task's name are passed on, e.g. `mise run test -p kempelen`.
+
+# Develop.
+[tasks.clean]
+description = "Remove build outputs"
+run = "cargo clean"
+
+[tasks.fix]
+description = "Format the Rust code and the scripts"
+run = ["cargo fmt --all", "biome check --write ."]
+
+[tasks.speech]
+description = "Stage the pinned Kokoro model and voices into KEMPELEN_DATA_DIR (about 349 MB the first time)"
+run = "bun scripts/speech.ts"
+
+# Check.
+[tasks.check]
+description = "Formatting, Clippy with every feature, and spelling"
+run = [
+  { task = "fmt" },
+  { task = "clippy" },
+  { task = "spell" },
+]
+
+[tasks.build]
+description = "cargo check of the workspace, and of the library with its default features only"
+run = ["cargo check --workspace --all-targets --all-features", "cargo check -p kempelen"]
+
+[tasks.fmt]
+description = "Check the Rust formatting"
+run = "cargo fmt --all --check"
+
+[tasks.clippy]
+description = "Clippy with every feature, warnings denied"
+run = "cargo clippy --workspace --all-targets --all-features -- --deny warnings"
+
+[tasks.spell]
+description = "Spelling (typos.toml)"
+run = "typos"
+
+[tasks.links]
+description = "Broken links in the Markdown files (lychee.toml)"
+run = "lychee --no-progress README.md AGENTS.md CLAUDE.md TODO.md docs 'crates/**/*.md'"
+
+[tasks.machete]
+description = "Unused Rust dependencies"
+run = "cargo machete"
+
+[tasks.scripts]
+description = "Lint, type-check and test the Bun scripts"
+run = ["biome check .", "tsc --project tsconfig.json", "bun test scripts"]
+
+[tasks.deny]
+description = "Licences, bans and sources (advisories run weekly in CI)"
+run = "cargo deny --all-features check licenses bans sources"
+
+[tasks.audit]
+description = "Advisories, licences, bans and sources"
+run = "cargo deny --all-features check"
+
+# Test. The light tier needs no model; the model tier reads the staged files in KEMPELEN_DATA_DIR.
+[tasks.test]
+description = "The light tier (no model), with nextest, then the doc tests"
+run = ["cargo nextest run --workspace --all-features", "cargo test --workspace --all-features --doc"]
+
+[tasks."test:model"]
+description = "The model tier: the ignored tests that run Kokoro on the CPU (needs `mise run speech`)"
+run = "cargo nextest run --workspace --all-features --profile model --run-ignored only -E 'not (test(/^offline::/) | test(/^cuda::/))'"
+
+# The every-voice check of the staged files: it writes its WAVs into KEMPELEN_FRESH_DATA_DIR, which
+# must not exist yet, and fails if the staged folder changes (nothing is copied or downloaded).
+[tasks."test:offline"]
+description = "Every voice from the staged files, writing only into a fresh folder (needs `mise run speech`)"
+env = { KEMPELEN_FRESH_DATA_DIR = "{{config_root}}/tmp/fresh-data" }
+run = [
+  "bun -e \"const fs = require('node:fs'); const dir = process.env.KEMPELEN_FRESH_DATA_DIR; fs.rmSync(dir, { recursive: true, force: true });\"",
+  "cargo nextest run -p kempelen --profile model --run-ignored only -E 'test(/^offline::/)'",
+]
+
+[tasks.coverage]
+description = "The light tier with coverage"
+run = "cargo llvm-cov nextest --workspace --all-features"
+
+# Measure and compare (local only).
+[tasks.golden]
+description = "Score jespersen against the eSpeak NG capture in tmp/ (skips without it; docs/jespersen.md)"
+run = "cargo run -p kempelen --example golden -- report"
+
+[tasks.bench]
+description = "The speech benchmark on the CPU (docs/performance.md; needs `mise run speech`)"
+run = "cargo run --release -p kempelen --example bench"
+
+# What CI's Checks workflow runs, in its order: the quick checks first, so they fail fast.
+[tasks.ci]
+description = "Every check CI's light tier runs"
+run = [
+  { tasks = ["fmt", "spell", "links"] },
+  { tasks = ["machete", "deny", "scripts"] },
+  { task = "clippy" },
+  { task = "test" },
+]

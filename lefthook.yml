@@ -1,0 +1,25 @@
+# Git hooks, installed by scripts/install.sh / install.bat (`lefthook install`). Skip once with
+# `git commit --no-verify` only when you mean to; CI runs the same checks.
+
+pre-commit:
+  jobs:
+    - name: rustfmt
+      glob: "*.rs"
+      run: rustfmt {staged_files}
+      stage_fixed: true
+    - name: biome
+      glob: "*.{ts,json}"
+      exclude: ["crates/**"]
+      run: bun x biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  jobs:
+    # The first line starts with a known [prefix] (AGENTS.md, "Commit messages").
+    - name: prefix
+      run: sh scripts/commit-message.sh {1}
+
+pre-push:
+  jobs:
+    - name: clippy
+      run: mise run clippy
