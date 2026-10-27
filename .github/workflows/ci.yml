@@ -63,7 +63,7 @@ jobs:
       # The Rust toolchain pinned in rust-toolchain.toml.
       - run: rustup toolchain install
       # OpenSSL's headers, for ort-sys' download of ONNX Runtime at build time and the CUDA download
-      # (feature `cuda-install`).
+      # (features `cuda-install` and `speech-download`).
       - name: Linux libraries
         if: runner.os == 'Linux'
         run: |

@@ -55,6 +55,10 @@ checked by byte count and SHA-256 before use, and a missing or damaged file is a
 - `bun scripts/speech.ts [DIR]` (`mise run speech`) stages them into `DIR` (default `tmp/speech`, or
   `KEMPELEN_DATA_DIR`), downloading only what is missing or damaged, from allowed hosts only, checking
   sizes and checksums, and writes `NOTICE.txt` and `manifest.json` beside them.
+- `kempelen::assets::stage(dir, progress)` (feature `speech-download`) does the same from Rust, for an
+  application that fetches the files on first use instead of shipping them: the same checks, each file
+  downloaded into a temporary `.part` file, refused if larger than pinned, and moved into place only once
+  its size and SHA-256 match.
 - **An application staging the same files for its installer** reads the manifest and the notice from
   the kempelen checkout Cargo pinned, so there is one source and no copy. Find it with
   `cargo metadata --format-version 1` (the `manifest_path` of the package named `kempelen`, whose folder
@@ -67,7 +71,8 @@ checked by byte count and SHA-256 before use, and a missing or damaged file is a
 | --- | --- |
 | (always) | `cuda`: on 64-bit Windows, `Synthesizer::with_cuda` runs the model on an NVIDIA GPU through an installed CUDA runtime, falling back to the CPU if the GPU fails later; `cuda::available`, `runtime_dir`, `is_installed` |
 | `cuda-install` | `cuda::install`: downloads the pinned provider and NVIDIA libraries (about 1.6 GB, 2.3 GB installed) into a runtime folder, with checksums; only when the caller asks |
-| `gpu` | `gpu::detect`: which accelerator a machine has (NVML, Vulkan, Apple silicon) and its memory |
+| `speech-download` | `assets::stage`: downloads the pinned model, voices and notices (about 349 MB) into a speech data folder, only what is missing or damaged; only when the caller asks |
+| `gpu` | `gpu::detect`: which accelerator a machine has (NVML, Vulkan, Apple silicon) and its memory; it downloads nothing |
 
 On 64-bit Windows kempelen links pyke's CUDA-enabled static ONNX Runtime core, as manuzio did, because
 the CPU output depends on that build. An application using CUDA ships pyke's

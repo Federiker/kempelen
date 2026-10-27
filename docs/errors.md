@@ -16,6 +16,7 @@ Every fallible function returns `kempelen::Result<T>`, that is `Result<T, kempel
 | `UnsupportedReading(String)` | `JespersenPhonemizer::new` got a reading code jespersen does not read |
 | `NoSpeech` | The text holds nothing that can be spoken |
 | `Asset { path, problem }` | A model or voice file is `Missing`, `Unreadable`, `Incomplete` (wrong size), fails its `Checksum`, or is `Unknown` to the manifest (`AssetProblem`) |
+| `Download { path, message }` | `assets::stage` (feature `speech-download`): the manifest names an unsafe source, or a download failed, was larger than pinned or failed its checksum |
 | `InvalidVoice(&str)` | A voice file is not a list of 256-wide style vectors |
 | `NoStyle { styles, length }` | `load_voice` was asked for a sequence longer than the voice has styles for |
 | `Phonemes { text, writing, source }` | jespersen could not read the words, or write their phonemes (`source` is jespersen's error) |

@@ -16,8 +16,6 @@ use std::{
     path::{Path, PathBuf},
 };
 
-#[cfg(feature = "cuda-install")]
-mod download;
 mod error;
 #[cfg(feature = "cuda-install")]
 mod install;

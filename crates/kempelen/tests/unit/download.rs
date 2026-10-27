@@ -14,10 +14,10 @@ use std::{
 
 static NEXT_TEMP_ID: AtomicU64 = AtomicU64::new(0);
 
-struct TestDir(PathBuf);
+pub(crate) struct TestDir(PathBuf);
 
 impl TestDir {
-    fn new() -> Self {
+    pub(crate) fn new() -> Self {
         let root = env::temp_dir();
         for _ in 0..100 {
             let id = NEXT_TEMP_ID.fetch_add(1, Ordering::Relaxed);
@@ -38,7 +38,7 @@ impl TestDir {
         panic!("could not create a unique download test directory");
     }
 
-    fn path(&self) -> &Path {
+    pub(crate) fn path(&self) -> &Path {
         &self.0
     }
 }
@@ -49,13 +49,13 @@ impl Drop for TestDir {
     }
 }
 
-struct MockResponse {
+pub(crate) struct MockResponse {
     status: &'static str,
     body: Vec<u8>,
 }
 
 impl MockResponse {
-    fn ok(body: impl Into<Vec<u8>>) -> Self {
+    pub(crate) fn ok(body: impl Into<Vec<u8>>) -> Self {
         Self {
             status: "200 OK",
             body: body.into(),
@@ -63,14 +63,14 @@ impl MockResponse {
     }
 }
 
-struct MockServer {
-    url: String,
+pub(crate) struct MockServer {
+    pub(crate) url: String,
     requests: mpsc::Receiver<String>,
     worker: JoinHandle<()>,
 }
 
 impl MockServer {
-    fn start(responses: Vec<MockResponse>) -> Self {
+    pub(crate) fn start(responses: Vec<MockResponse>) -> Self {
         let listener = TcpListener::bind("127.0.0.1:0").unwrap();
         let address = listener.local_addr().unwrap();
         let (sender, requests) = mpsc::channel();
@@ -110,7 +110,7 @@ impl MockServer {
         }
     }
 
-    fn finish(self) -> Vec<String> {
+    pub(crate) fn finish(self) -> Vec<String> {
         self.worker.join().unwrap();
         self.requests.try_iter().collect()
     }

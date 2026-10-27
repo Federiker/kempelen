@@ -19,8 +19,8 @@ published to crates.io. Owner: Federiker.
   into `tmp/` (`crates/kempelen/tests/golden/upstream_espeak.py`) and the tests that need it skip
   without it, as in jespersen ([docs/jespersen.md](docs/jespersen.md)).
 - **No download at synthesis time.** The library verifies byte counts and SHA-256 and reads only
-  what the caller staged; only `cuda::install` (feature `cuda-install`) downloads, when the caller
-  asks.
+  what the caller staged; only `assets::stage` (feature `speech-download`) and `cuda::install`
+  (feature `cuda-install`) download, when the caller asks.
 - **The library takes inputs.** No environment variables, no app folders, no app names: the caller
   says where the model and voices are, which reading rules to use, whether CUDA may be used. Only
   tests, examples and scripts read `KEMPELEN_DATA_DIR`.
@@ -46,7 +46,7 @@ published to crates.io. Owner: Federiker.
 
 | Path | What |
 | --- | --- |
-| `crates/kempelen` | The library: synthesis (`tts`), phonemes (`phonemes`, the Mandarin front end in `phonemes/chinese`), the speech assets (`assets`), CUDA (`cuda`; installing behind `cuda-install`), GPU detection (`gpu`, behind `gpu`) |
+| `crates/kempelen` | The library: synthesis (`tts`), phonemes (`phonemes`, the Mandarin front end in `phonemes/chinese`), the speech assets (`assets`; downloading them behind `speech-download`), CUDA (`cuda`; installing behind `cuda-install`), GPU detection (`gpu`, behind `gpu`) |
 | `crates/kempelen/assets` | The pinned speech manifest (`speech-assets.json`) and the notice staged beside the files (`speech-NOTICE.txt`) |
 | `crates/kempelen/mandarin` | The Mandarin readings (pypinyin, misaki, OpenCC data) and their generator |
 | `crates/kempelen/tests` | Unit tests (`tests/unit`), integration tests (`tests/it`, one program), the golden corpora (`tests/golden`) |
@@ -76,7 +76,7 @@ published to crates.io. Owner: Federiker.
   `mod.rs` stay declarative (modules and exports only).
 - Typed errors in the library (`kempelen::Error`, [docs/errors.md](docs/errors.md)); `anyhow` only in
   examples and tests. Report errors explicitly; never substitute empty or success-shaped values.
-- Optional parts are Cargo features (`gpu`, `cuda-install`), off by default.
+- Optional parts are Cargo features (`gpu`, `cuda-install`, `speech-download`), off by default.
 - Run `mise run audit` (cargo-deny, every feature) after changing dependencies.
 - Ask before decisions that change the public API, the output, the licences or the pinned assets.
 

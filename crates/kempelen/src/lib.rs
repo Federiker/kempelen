@@ -7,6 +7,8 @@
 
 pub mod assets;
 pub mod cuda;
+#[cfg(any(feature = "cuda-install", feature = "speech-download"))]
+mod download;
 mod error;
 #[cfg(feature = "gpu")]
 pub mod gpu;

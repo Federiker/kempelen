@@ -20,6 +20,11 @@ pub enum Error {
     /// A model or voice file is missing, damaged or not in the manifest.
     #[error("Speech asset {path} {problem}")]
     Asset { path: String, problem: AssetProblem },
+    /// Staging a speech asset failed: its source is not an allowed one, or its download failed, was
+    /// larger than pinned or failed its checksum (feature `speech-download`).
+    #[cfg(feature = "speech-download")]
+    #[error("Cannot download speech asset {path}: {message}")]
+    Download { path: String, message: String },
     /// A voice file is not a list of Kokoro style vectors.
     #[error("Invalid voice file: {0}")]
     InvalidVoice(&'static str),

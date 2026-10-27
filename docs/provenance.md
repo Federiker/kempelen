@@ -16,7 +16,7 @@ What came from where:
 | --- | --- |
 | the library (`crates/kempelen`) | `crates/tts` (`mnz-tts`) |
 | `gpu` (feature `gpu`) | `crates/gpu` (`mnz-gpu`) |
-| `cuda::install` and its download (feature `cuda-install`) | `crates/tts/src/cuda.rs`, `crates/downloader` (`mnz-downloader`) |
+| `cuda::install` and the shared download (features `cuda-install`, `speech-download`) | `crates/tts/src/cuda.rs`, `crates/downloader` (`mnz-downloader`) |
 | `Voice` | `VoiceId` (`crates/models/src/voices.rs`) |
 | `Language`, the shipped reading rules | `Language` (`crates/lang`), the packs' `narration` sections (`assets/json/lang/*.json`) |
 | `assets/speech-assets.json`, `assets/speech-NOTICE.txt`, `scripts/speech.ts` | `assets/config/…`, `scripts/speech.ts` |

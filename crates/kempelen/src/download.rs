@@ -1,5 +1,10 @@
-//! Streaming HTTP downloads with SHA-256 verification, for [`super::install`]: the part of
-//! manuzio's downloader the CUDA installer uses.
+//! Streaming HTTP downloads with SHA-256 verification: `download`, the part of manuzio's downloader
+//! the CUDA installer uses (`cuda::install`), and `download_to`, the way manuzio's `scripts/speech.ts`
+//! stages a speech file (`assets::stage`).
+#![cfg_attr(
+    not(feature = "cuda-install"),
+    allow(dead_code, reason = "only the CUDA installer downloads into a folder")
+)]
 
 use futures_util::StreamExt;
 use reqwest::Client;
@@ -13,10 +18,10 @@ use std::{
 
 /// Receives `(downloaded_bytes, total_bytes)` while a response arrives; the total is
 /// `None` when the server does not report a length.
-pub(super) type DownloadProgress = Arc<dyn Fn(u64, Option<u64>) + Send + Sync>;
+pub(crate) type DownloadProgress = Arc<dyn Fn(u64, Option<u64>) + Send + Sync>;
 
 /// Options controlling HTTP requests, caching and checksum verification.
-pub(super) struct DownloadOptions {
+pub(crate) struct DownloadOptions {
     /// Download again even when a cached output already exists.
     pub re_download: bool,
     /// Request timeout, in seconds.
@@ -39,10 +44,10 @@ impl Default for DownloadOptions {
 }
 
 /// Download a URL into the folder `to`, named after the URL's final path segment, optionally
-/// verifying its checksum. Errors are described in words, for [`super::CudaError::Download`].
+/// verifying its checksum. Errors are described in words, for the caller to wrap.
 ///
 /// Cached files are reused unless `options.re_download` is true.
-pub(super) async fn download(
+pub(crate) async fn download(
     url: &str,
     to: &Path,
     options: DownloadOptions,
@@ -101,6 +106,98 @@ pub(super) async fn download(
         return Err("downloaded file failed SHA-256 verification".to_owned());
     }
     Ok(out_path)
+}
+
+/// Download `url` to `path` as `scripts/speech.ts` stages a speech file: into a temporary
+/// `<name>.<unique>.part` beside it, refusing more than `size` bytes, then checking the size and the
+/// SHA-256 and only then renaming it into place. The temporary file never stays behind, and a file
+/// already at `path` is replaced only by a verified one. `progress` receives each chunk's length.
+#[cfg(feature = "speech-download")]
+pub(crate) async fn download_to(
+    url: &str,
+    path: &Path,
+    size: u64,
+    sha256: &str,
+    timeout_secs: u64,
+    progress: &(dyn Fn(u64) + Send + Sync),
+) -> Result<(), String> {
+    let expected = parse_sha256(sha256)?;
+    let name = path
+        .file_name()
+        .and_then(|name| name.to_str())
+        .ok_or_else(|| format!("no file name in {}", path.display()))?;
+    let folder = path.parent().unwrap_or(Path::new("."));
+    fs::create_dir_all(folder)
+        .map_err(|error| format!("cannot create {}: {error}", folder.display()))?;
+    let temporary = folder.join(format!("{name}.{}.part", unique_id()));
+    let result = fetch_verified(url, &temporary, size, &expected, timeout_secs, progress).await;
+    let result = result.and_then(|()| {
+        fs::rename(&temporary, path)
+            .map_err(|error| format!("cannot move it to {}: {error}", path.display()))
+    });
+    let _ = fs::remove_file(&temporary);
+    result
+}
+
+#[cfg(feature = "speech-download")]
+async fn fetch_verified(
+    url: &str,
+    temporary: &Path,
+    size: u64,
+    expected: &[u8; 32],
+    timeout_secs: u64,
+    progress: &(dyn Fn(u64) + Send + Sync),
+) -> Result<(), String> {
+    let client = Client::builder()
+        .timeout(std::time::Duration::from_secs(timeout_secs))
+        .build()
+        .map_err(|error| error.to_string())?;
+    let response = client
+        .get(url)
+        .send()
+        .await
+        .and_then(reqwest::Response::error_for_status)
+        .map_err(|error| format!("download failed: {error}"))?;
+    let write_error =
+        |error: std::io::Error| format!("cannot write {}: {error}", temporary.display());
+    let mut file = fs::OpenOptions::new()
+        .write(true)
+        .create_new(true)
+        .open(temporary)
+        .map_err(write_error)?;
+    let mut hash = Sha256::new();
+    let mut received = 0u64;
+    let mut stream = response.bytes_stream();
+    while let Some(chunk) = stream.next().await {
+        let chunk = chunk.map_err(|error| format!("download failed: {error}"))?;
+        received += chunk.len() as u64;
+        if received > size {
+            return Err(format!("larger than its pinned {size} bytes"));
+        }
+        hash.update(&chunk);
+        file.write_all(&chunk).map_err(write_error)?;
+        progress(chunk.len() as u64);
+    }
+    file.flush().map_err(write_error)?;
+    if received != size || hash.finalize().as_slice() != expected {
+        return Err("checksum mismatch".to_owned());
+    }
+    Ok(())
+}
+
+/// A name part no other download of this process, or of another one, uses at the same time.
+#[cfg(feature = "speech-download")]
+fn unique_id() -> String {
+    use std::sync::atomic::{AtomicU64, Ordering};
+    static NEXT: AtomicU64 = AtomicU64::new(0);
+    let nanos = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map_or(0, |time| time.as_nanos());
+    format!(
+        "{}-{nanos}-{}",
+        std::process::id(),
+        NEXT.fetch_add(1, Ordering::Relaxed)
+    )
 }
 
 /// The decoded final non-empty path segment of a URL, as a file name.
@@ -179,5 +276,5 @@ fn verify_sha256(path: &Path, expected: &str) -> Result<bool, String> {
 }
 
 #[cfg(test)]
-#[path = "../../tests/unit/cuda/download.rs"]
-mod tests;
+#[path = "../tests/unit/download.rs"]
+pub(crate) mod tests;

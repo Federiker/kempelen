@@ -149,6 +149,121 @@ fn resolve(asset: &Asset, dirs: &[PathBuf]) -> Result<PathBuf> {
     })
 }
 
+/// Hosts the manifest may download from, as `scripts/speech.ts` allows.
+#[cfg(feature = "speech-download")]
+const ALLOWED_HOSTS: [&str; 2] = ["huggingface.co", "raw.githubusercontent.com"];
+
+/// Seconds one file may take to download, as in `scripts/speech.ts`.
+#[cfg(feature = "speech-download")]
+const DOWNLOAD_TIMEOUT_SECS: u64 = 300;
+
+/// Stage the pinned model, voices and notices into `dir` (feature `speech-download`): what
+/// `scripts/speech.ts` does, in Rust.
+///
+/// Every file already there intact is kept; each missing or damaged one is downloaded from the
+/// manifest's pinned URL (https, from Hugging Face or GitHub only), refused if larger than pinned,
+/// checked by size and SHA-256, and only then moved into place. `NOTICE.txt` and `manifest.json` are
+/// written beside them. `progress(done, total)` counts the bytes of the files that are downloaded.
+/// About 349 MB on a first run; nothing when everything is staged. Only this call downloads:
+/// synthesis never does.
+#[cfg(feature = "speech-download")]
+pub async fn stage(dir: &Path, progress: impl Fn(u64, u64) + Send + Sync) -> Result<()> {
+    let files = &manifest().files;
+    check_sources(files)?;
+    stage_files(dir, files, &progress).await?;
+    write_notices(dir)
+}
+
+/// The manifest's checks in `scripts/speech.ts`: safe paths, each once, https from an allowed host,
+/// positive sizes and SHA-256 digests.
+#[cfg(feature = "speech-download")]
+fn check_sources(files: &[Asset]) -> Result<()> {
+    let mut seen = std::collections::HashSet::new();
+    for asset in files {
+        let refuse = |message: &str| Error::Download {
+            path: asset.path.clone(),
+            message: message.to_owned(),
+        };
+        let safe_path = asset.path.split_once('/').is_some_and(|(folder, name)| {
+            matches!(folder, "models" | "voices" | "notices")
+                && !name.is_empty()
+                && name
+                    .chars()
+                    .all(|c| c.is_ascii_alphanumeric() || matches!(c, '_' | '.' | '-'))
+        }) && !asset.path.contains("..");
+        if !safe_path || !seen.insert(asset.path.as_str()) {
+            return Err(refuse("invalid speech asset path"));
+        }
+        let authority = asset
+            .url
+            .strip_prefix("https://")
+            .map(|rest| rest.split(['/', '?', '#']).next().unwrap_or_default());
+        let host = authority
+            .filter(|authority| !authority.contains('@'))
+            .map(|authority| authority.split(':').next().unwrap_or_default());
+        if !host.is_some_and(|host| ALLOWED_HOSTS.contains(&host)) {
+            return Err(refuse("unsafe speech asset URL"));
+        }
+        let digest = asset.sha256.len() == 64
+            && asset
+                .sha256
+                .chars()
+                .all(|c| c.is_ascii_digit() || ('a'..='f').contains(&c));
+        if asset.size == 0 || !digest {
+            return Err(refuse("invalid size or checksum in the manifest"));
+        }
+    }
+    Ok(())
+}
+
+/// Download each of `files` that is not in `dir` intact.
+#[cfg(feature = "speech-download")]
+async fn stage_files(
+    dir: &Path,
+    files: &[Asset],
+    progress: &(dyn Fn(u64, u64) + Send + Sync),
+) -> Result<()> {
+    let missing: Vec<&Asset> = files
+        .iter()
+        .filter(|asset| verify(&dir.join(&asset.path), asset).is_err())
+        .collect();
+    let total = missing.iter().map(|asset| asset.size).sum();
+    let done = std::sync::atomic::AtomicU64::new(0);
+    progress(0, total);
+    for asset in missing {
+        log::info!("Preparing speech asset: {}", asset.path);
+        let report = |bytes: u64| {
+            let now = done.fetch_add(bytes, std::sync::atomic::Ordering::Relaxed) + bytes;
+            progress(now.min(total), total);
+        };
+        crate::download::download_to(
+            &asset.url,
+            &dir.join(&asset.path),
+            asset.size,
+            &asset.sha256,
+            DOWNLOAD_TIMEOUT_SECS,
+            &report,
+        )
+        .await
+        .map_err(|message| Error::Download {
+            path: asset.path.clone(),
+            message,
+        })?;
+    }
+    Ok(())
+}
+
+/// `NOTICE.txt` and `manifest.json` beside the staged files, as `scripts/speech.ts` writes them.
+#[cfg(feature = "speech-download")]
+fn write_notices(dir: &Path) -> Result<()> {
+    std::fs::create_dir_all(dir).map_err(Error::file("create", dir))?;
+    for (name, text) in [("NOTICE.txt", NOTICE), ("manifest.json", MANIFEST)] {
+        let path = dir.join(name);
+        std::fs::write(&path, text).map_err(Error::file("write", &path))?;
+    }
+    Ok(())
+}
+
 #[cfg(test)]
 #[path = "../tests/unit/assets.rs"]
 mod tests;

@@ -93,3 +93,120 @@ fn several_folders_are_searched_in_order() {
         [PathBuf::from("first"), PathBuf::from("second")]
     );
 }
+
+#[cfg(feature = "speech-download")]
+mod stage {
+    use super::super::*;
+    use crate::download::tests::{MockResponse, MockServer, TestDir};
+    use std::sync::Mutex;
+
+    fn served(path: &str, bytes: &[u8], server: &MockServer) -> Asset {
+        Asset {
+            url: server.url.clone(),
+            ..super::asset(path, bytes)
+        }
+    }
+
+    #[tokio::test]
+    async fn only_missing_or_damaged_files_are_downloaded_and_verified() {
+        let dir = TestDir::new();
+        let server = MockServer::start(vec![
+            MockResponse::ok(b"missing".to_vec()),
+            MockResponse::ok(b"damaged".to_vec()),
+        ]);
+        let files = [
+            served("voices/kept.bin", b"kept", &server),
+            served("voices/missing.bin", b"missing", &server),
+            served("models/damaged.onnx", b"damaged", &server),
+        ];
+        std::fs::create_dir_all(dir.path().join("voices")).unwrap();
+        std::fs::create_dir_all(dir.path().join("models")).unwrap();
+        std::fs::write(dir.path().join("voices/kept.bin"), b"kept").unwrap();
+        std::fs::write(dir.path().join("models/damaged.onnx"), b"broken!").unwrap();
+        let reports = Mutex::new(Vec::new());
+        stage_files(dir.path(), &files, &|done, total| {
+            reports.lock().unwrap().push((done, total));
+        })
+        .await
+        .unwrap();
+        assert_eq!(server.finish().len(), 2, "the intact file is not fetched");
+        for asset in &files {
+            verify(&dir.path().join(&asset.path), asset).unwrap();
+        }
+        let reports = reports.into_inner().unwrap();
+        assert_eq!(reports.first(), Some(&(0, 14)));
+        assert_eq!(reports.last(), Some(&(14, 14)));
+        let leftovers: Vec<_> = std::fs::read_dir(dir.path().join("voices"))
+            .unwrap()
+            .map(|entry| entry.unwrap().file_name())
+            .filter(|name| name.to_string_lossy().ends_with(".part"))
+            .collect();
+        assert!(leftovers.is_empty(), "{leftovers:?}");
+    }
+
+    #[tokio::test]
+    async fn a_file_larger_than_pinned_or_with_another_checksum_is_refused_and_left_out() {
+        for body in [b"too long by far".to_vec(), b"evil".to_vec()] {
+            let dir = TestDir::new();
+            let server = MockServer::start(vec![MockResponse::ok(body)]);
+            let files = [served("voices/test.bin", b"good", &server)];
+            let error = stage_files(dir.path(), &files, &|_, _| {})
+                .await
+                .unwrap_err();
+            assert!(
+                matches!(&error, Error::Download { path, .. } if path == "voices/test.bin"),
+                "{error}"
+            );
+            server.finish();
+            let left: Vec<_> = std::fs::read_dir(dir.path().join("voices"))
+                .unwrap()
+                .collect();
+            assert!(left.is_empty(), "nothing is left behind: {left:?}");
+        }
+    }
+
+    #[test]
+    fn the_pinned_manifest_downloads_only_from_allowed_https_hosts() {
+        check_sources(&manifest().files).unwrap();
+        let good = Asset {
+            url: "https://huggingface.co/onnx-community/x.bin".into(),
+            ..super::asset("voices/x.bin", b"x")
+        };
+        check_sources(std::slice::from_ref(&good)).unwrap();
+        for (path, url) in [
+            ("voices/x.bin", "http://huggingface.co/x.bin"),
+            ("voices/x.bin", "https://example.com/x.bin"),
+            ("voices/x.bin", "https://user@huggingface.co/x.bin"),
+            ("voices/x.bin", "https://huggingface.co.example.com/x.bin"),
+            ("../x.bin", "https://huggingface.co/x.bin"),
+            ("voices/../x.bin", "https://huggingface.co/x.bin"),
+            ("other/x.bin", "https://huggingface.co/x.bin"),
+            ("voices/a/x.bin", "https://huggingface.co/x.bin"),
+        ] {
+            let asset = Asset {
+                path: path.into(),
+                url: url.into(),
+                ..good.clone()
+            };
+            assert!(check_sources(&[asset]).is_err(), "{path} {url}");
+        }
+        assert!(
+            check_sources(&[good.clone(), good]).is_err(),
+            "a path twice"
+        );
+    }
+
+    #[test]
+    fn the_notice_and_the_manifest_are_written_beside_the_files() {
+        let dir = TestDir::new();
+        write_notices(dir.path()).unwrap();
+        assert_eq!(
+            std::fs::read_to_string(dir.path().join("NOTICE.txt")).unwrap(),
+            NOTICE
+        );
+        assert_eq!(
+            std::fs::read_to_string(dir.path().join("manifest.json")).unwrap(),
+            MANIFEST
+        );
+    }
+}

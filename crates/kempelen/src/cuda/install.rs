@@ -1,8 +1,5 @@
-use super::{
-    ARCHIVES, Archive, CudaError, Format, MARKER, RUNTIME_ID,
-    download::{DownloadOptions, download},
-    download_bytes,
-};
+use super::{ARCHIVES, Archive, CudaError, Format, MARKER, RUNTIME_ID, download_bytes};
+use crate::download::{DownloadOptions, download};
 use std::{
     fs::{self, File},
     io::{self, BufReader, Read},

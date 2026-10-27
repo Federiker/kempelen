@@ -13,6 +13,9 @@ publish.workspace = true
 gpu = ["dep:ash", "dep:nvml-wrapper"]
 # Installing the CUDA runtime (src/cuda/install.rs): about 1.6 GB of pinned archives, downloaded.
 cuda-install = ["dep:futures-util", "dep:lzma-rust2", "dep:reqwest", "dep:zip"]
+# Staging the model, voices and notices (src/assets.rs, `assets::stage`): about 349 MB from Hugging
+# Face, downloaded only when the caller asks, as scripts/speech.ts does.
+speech-download = ["dep:futures-util", "dep:reqwest"]
 
 [dependencies]
 crustytts-core = { workspace = true }
